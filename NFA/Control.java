@@ -660,7 +660,10 @@ public class Control {
                                              f2 = 2.0F;
                                             }
                                         }
-                                      
+                                    if (checkpoints.stage == 9) {
+                                        f2 = 0.0F;
+                                        
+                                    }
                                        
                                     
                                      if (checkpoints.stage == 5 && bulistc && i4 == 0) {

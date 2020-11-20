@@ -2360,10 +2360,10 @@ public class xtGraphics extends Panel implements Runnable {
                             winner = true;
                         } else {
                             if (m.flex != 2) {
-                                rd.setColor(new Color(m.csky[0], m.csky[1], m.csky[2]));
-                                rd.fillRect(271, 70, youlost.getWidth(ob), youlost.getHeight(ob));
-                                rd.setColor(new Color(m.cfade[0], m.cfade[1], m.cfade[2]));
-                                rd.drawRect(271, 70, youlost.getWidth(ob), youlost.getHeight(ob));
+                                //rd.setColor(new Color(m.csky[0], m.csky[1], m.csky[2]));
+                                //rd.fillRect(271, 70, youlost.getWidth(ob), youlost.getHeight(ob));
+                                //rd.setColor(new Color(m.cfade[0], m.cfade[1], m.cfade[2]));
+                                //rd.drawRect(271, 70, youlost.getWidth(ob), youlost.getHeight(ob));
                             }
                             rd.drawImage(youlost, 386, 70, null);
                             if (aflk) {
@@ -3237,6 +3237,15 @@ public class xtGraphics extends Panel implements Runnable {
                sc[3]=8;
                sc[2]=10;
                sc[1]=10;
+            }
+            
+            if (i==9){
+               sc[6]=12;
+               sc[5]=11;
+               sc[4]=10;
+               sc[3]=9;
+               sc[2]=9;
+               sc[1]=8;
             }
             
             
