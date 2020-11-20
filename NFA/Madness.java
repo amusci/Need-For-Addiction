@@ -108,7 +108,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static float airs[] = {
-            .7F, .6F, 0.95F, .85F, 2.2F, .7F, 0.9F, 0.5F, 1.0F, 1.5F, 1.0f, 1.2f, 1.0f, 2.2f, 1.3f, 2.5f
+            .7F, .6F, 0.95F, .85F, 2.2F, .7F, 0.9F, 0.5F, 1.0F, 1.5F, 1.0f, 1.2f, 1.0f, 2.2f, 1.0f, 2.5f
     };
     /**
      * Aerial control
@@ -118,7 +118,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static int airc[] = {
-            65, 35, 40, 60, 30, 30, 40, 50, 40, 45, 35, 60, 50, 60, 100, 150
+            65, 35, 40, 60, 30, 30, 40, 50, 40, 45, 35, 60, 50, 60, 60, 150
     };
     /**
      * Turning responsiveness
@@ -153,7 +153,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static float moment[] = {
-            1.0f, 0.25f, 1.1f, 1.0f, 1.1f, 1.38f, 1.6f, .75f, 2.0f, 1.38f, 2.5f, 1.0f, 4.0f, .5f, 1.5f, 2.0f
+            1.0f, 0.25f, 1.1f, 1.0f, 1.1f, 1.38f, 1.6f, .75f, 2.0f, 1.38f, 2.5f, 1.0f, 4.0f, .5f, 5.5f, 2.0f
     };
     /**
      * Tolerance towards other cars
@@ -181,7 +181,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static int lift[] = {
-            10, 30, 0, 20, 0, 10, 10, 5, 0, 20, 0, 0, 10, 100, 30, 0
+            10, 30, 0, 20, 0, 10, 10, 5, 0, 20, 0, 0, 10, 30, 200, 0
     };
     /**
      * The amount of "reverse lift" or recoil the car will get from others
@@ -195,7 +195,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static int powerloss[] = {
-            2500000, 2500000, 3500000, 2500000, 4000000, 2500000, 3200000, 3200000, 2750000, 4200000, 2750000, 4500000, 3500000, 16700000, 3000000, 5500000
+            2500000, 2500000, 3500000, 2500000, 4000000, 2500000, 3200000, 3200000, 2750000, 4200000, 2750000, 4500000, 3500000, 16700000, 0x9f5e100, 0x9f5e100
     };
     /**
      * Y value of cars when flipped over during a bad landing
@@ -231,14 +231,14 @@ public class Madness {
      * @author Omar Waly
      */
     public static float dammult[] = {
-            0.7F, .75F, 0.35F, .53F, 0.6F, .35F, 0.85F, 0.65F, 0.25F, 0.36F, 0.30f, 0.35F, 0.35F, 0.256F, 0.36F, 0.36F, 0.46F
+            0.7F, .75F, 0.35F, .53F, 0.6F, .35F, 0.85F, 0.65F, 0.25F, 0.36F, 0.30f, 0.35F, 0.35F, 0.256F, 0.36F, 0.26F, 0.46F
     };
     /**
      * The amount of Damage that a car can take before it is considered as "wasted".
      * @author Omar Waly
      */
     public static int maxmag[] = {
-             12500, 10500, 11000, 10500, 12000, 25000, 25500, 31500, 32000, 25700, 43000, 35700, 55000, 45000, 5800, 108000
+             12500, 10500, 11000, 10500, 12000, 25000, 25500, 31500, 32000, 25700, 43000, 35700, 55000, 45000, 108000, 108000
     };
     private boolean dominate[];
     private boolean caught[];
