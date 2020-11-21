@@ -142,9 +142,7 @@ public class Control {
                     }
                     upwait = 0;
                     
-                    if (checkpoints.stage == 1) {
-                        upwait = 0;
-                    }
+                    
                     f = 0.0F;
                     if (checkpoints.stage == 1 || checkpoints.stage == 2|| checkpoints.stage == 3|| checkpoints.stage == 5|| checkpoints.stage == 6|| checkpoints.stage == 7) {
                         f = 0.2F;
@@ -265,7 +263,7 @@ public class Control {
                         if (checkpoints.stage == 3 ||checkpoints.stage == 4 ||checkpoints.stage == 6 || checkpoints.stage == 7 || checkpoints.stage == 9
                                 || checkpoints.stage == 10 || checkpoints.stage == 11 || checkpoints.stage == 12
                                 || checkpoints.stage == 14 || checkpoints.stage == 16 || checkpoints.stage == 17) {
-                            agressed = true;
+                            agressed = false;
                         }
                         cntrn = 5;
                     } else {
@@ -454,7 +452,7 @@ public class Control {
                             j2 = 30;
                         }
                         if (checkpoints.stage == 7) {
-                            j2 = 40;
+                            j2 = 0;
                         }
                         if (checkpoints.stage == 8 && madness.cn == 11) {
                             j2 = 40;
@@ -669,7 +667,7 @@ public class Control {
                                      if (checkpoints.stage == 5 && bulistc && i4 == 0) {
                                         f2 = 1.0F;
                                     }
-                                    if (checkpoints.stage == 7 && madness.im == 6 && i4 == 0) {
+                                    if (checkpoints.stage == 7 && madness.im == 6 && i4 == 0) { 
                                         f2 = (float) (f2 * 1.5D);
                                     }
                                     if (checkpoints.stage == 8) {

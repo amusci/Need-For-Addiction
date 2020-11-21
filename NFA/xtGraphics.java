@@ -80,7 +80,7 @@ public class xtGraphics extends Panel implements Runnable {
             0.65F, 0.6F, 0.55F, 0.77F, 0.62F, 0.9F, 0.6F, 0.72F, 0.45F, 0.8F, 0.75F, .95F, 0.87F, 1.0F, 1.0F, 1.0F
     };
     public float outdam[] = {
-            0.67F, 0.45F, 0.8F, 0.5F, 0.42F, 0.76F, 0.52F, 0.8F, 0.72F, 0.62F, 0.79F, 0.95F, 0.77F, 1.0F, 1,0F, 1.0F
+            0.67F, 0.45F, 0.8F, 0.5F, 0.55F, 0.76F, 0.52F, 0.8F, 0.72F, 0.62F, 0.79F, 0.95F, 0.77F, 1.0F, 1,0F, 1.0F
     };
     public boolean holdit;
     public int holdcnt;
