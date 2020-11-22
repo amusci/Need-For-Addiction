@@ -1,12 +1,17 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
-------------------------------------------------------------------------
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+
+11/20/20
+Welcome to Need For Addiction! This is the beta of the beta, 
+so if you got it you're lucky that I like you to a somewhat degree.
+
+
+This should include stages 1-8 and the cars up to Igniter have been edited.
+
+
+Big thanks to ToaZuka, G6, 10th Graves, Dragshot, IP, Kaff, Cryy, FATCAT, Ulti,
+and all of the donators of cars and play testers!
+
+
+
+
+-Addict

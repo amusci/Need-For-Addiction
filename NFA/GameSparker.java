@@ -754,12 +754,27 @@ nob++;
             u[j1].reset(checkpoints, xtgraphics.sc[j1]);
         while (++j1 < 7);
         xtgraphics.resetstat(checkpoints.stage);
+        
+        int[] xs = xtgraphics.xstart.clone();
+        int[] zs = xtgraphics.zstart.clone();
+
+        if(checkpoints.stage == 6) {
+            xs[1] = 2210;
+            zs[1] = -800;
+            System.out.println("Changed");
+            
+            //change whatever
+           //xs[1] = 2210;
+           //zs[1] = -800;
+        }
+
         j1 = 0;
         do {
-            aconto[j1] = new ContO(aconto1[xtgraphics.sc[j1]], xtgraphics.xstart[j1],
-                    250 - aconto1[xtgraphics.sc[j1]].grat, xtgraphics.zstart[j1], 0);
+            aconto[j1] = new ContO(aconto1[xtgraphics.sc[j1]], xs[j1],
+            250 - aconto1[xtgraphics.sc[j1]].grat, zs[j1], 0);
             amadness[j1].reseto(xtgraphics.sc[j1], aconto[j1], checkpoints);
         } while (++j1 < 7);
+        
         record.reset(aconto);
         System.gc();
     }
@@ -829,7 +844,7 @@ nob++;
             /*
              * Note: that is an L
              */
-            xtgraphics.unlocked = 17; //number = stage,  l = normal
+            xtgraphics.unlocked = 1; //number = stage,  l = normal
             if (xtgraphics.unlocked != 17)
                 checkpoints.stage = xtgraphics.unlocked;
             else

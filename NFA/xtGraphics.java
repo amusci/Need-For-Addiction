@@ -19,7 +19,23 @@ import java.util.*;
 
 
 
+
+
 public class xtGraphics extends Panel implements Runnable {
+    //NFA Fonts
+    static Font fontAdventure;
+    static Font fontOpenSans;
+    static {
+        try {
+            fontAdventure = Font.createFont(Font.TRUETYPE_FONT,new FileInputStream("data/fonts/Adventure.ttf"));
+            fontOpenSans = Font.createFont(Font.TRUETYPE_FONT,new FileInputStream("data/fonts/OpenSans.ttf"));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    //rd.setFont(xtGraphics.Adventure.deriveFont(Font.BOLD,15));
+ 
     /**
      * 
      */
@@ -62,7 +78,21 @@ public class xtGraphics extends Panel implements Runnable {
      */
     public int zstart[] = {
             -1500, -1000, -500, 0, 500, 1000, 1500
-    };
+        };
+        
+            
+        
+        
+  
+
+  
+    
+    
+   
+    
+    
+    
+        
     
     //your position,bottom left, b
     
@@ -77,7 +107,7 @@ public class xtGraphics extends Panel implements Runnable {
             0.6F, 0.7F, 0.4F, 0.3F, 0.8F, 0, 0.3F, 0.3F, 0.3F, 0.1F, 0.1F, 0.5F, 0, 0, 0, 0
     };
     public float dishandle[] = {
-            0.65F, 0.6F, 0.55F, 0.77F, 0.62F, 0.9F, 0.6F, 0.72F, 0.45F, 0.8F, 0.75F, .95F, 0.87F, 1.0F, 1.0F, 1.0F
+            0.65F, 0.6F, 0.55F, 0.77F, 0.62F, 0.7F, 0.6F, 0.72F, 0.45F, 0.8F, 0.75F, .95F, 0.87F, 1.0F, 1.0F, 1.0F
     };
     public float outdam[] = {
             0.67F, 0.45F, 0.8F, 0.5F, 0.55F, 0.76F, 0.52F, 0.8F, 0.72F, 0.62F, 0.79F, 0.95F, 0.77F, 1.0F, 1,0F, 1.0F
@@ -103,6 +133,9 @@ public class xtGraphics extends Panel implements Runnable {
     public Image loadingscreenbg;
     public Image toar1;
     public Image addictdrm;
+    public Image loadingstagebg;
+    
+    
     
     
     public Image kaff;
@@ -246,7 +279,7 @@ public class xtGraphics extends Panel implements Runnable {
     public int dested[];
     public String names[] = {
             "Illiminate", "Speedster", "Bison", "Kouki", "ADP", "Wanderer", "Ravenborn",
-            "Sergeant", "Hound", "Mashimoto", "Vanquished", "Igniter", "Maz 543", "Elitist",
+            "Sergeant", "Hound", "Mashimoto", "Vanquished", "Prometheus", "Maz 543", "Elitist",
             "Phantom Wedge", "DR Monstaa"
     };
     public int dmcnt;
@@ -257,7 +290,7 @@ public class xtGraphics extends Panel implements Runnable {
             {
                     "Alright", "Mediocre", "Decent"
             }, {
-                    "Wicked", "Amazing", "Super"
+                    "Wicked", "Amazing", "Certified"
             }, {
                     "Insane", "Ripping", "Radical"
             }, {
@@ -337,6 +370,9 @@ public class xtGraphics extends Panel implements Runnable {
      * 
      * @author Kaffeinated
      */
+    
+    
+    
     public void filterImage(Image img, int type) {
         BufferedImage buff_img = new BufferedImage(img.getWidth(null), img.getHeight(null),
                 BufferedImage.TYPE_INT_ARGB);
@@ -518,6 +554,7 @@ public class xtGraphics extends Panel implements Runnable {
             rd.drawImage(washout, 0, 0, null);
         }
     }   
+     
 
     /**Special color effect in credits
      * @param image the image
@@ -653,7 +690,7 @@ public class xtGraphics extends Panel implements Runnable {
         rd.drawImage(select, 352, 45, null);
         rd.drawImage(br, 0, 0, null);
         rd.drawImage(back[pback], 50, 350, null);
-        rd.setFont(new Font("SansSerif", 1, 11));
+        rd.setFont(xtGraphics.fontAdventure.deriveFont(Font.BOLD,15));
         FontHandler.fMetrics = rd.getFontMetrics();
         drawcs(496, "You can also use Keyboard Arrows and Enter to navigate.", 255, 113, 250, 3);
         lockcnt--;
@@ -673,12 +710,12 @@ public class xtGraphics extends Panel implements Runnable {
         rd.fillRoundRect(315, 150, 270, 52, 20, 40);
         rd.setColor(new Color(120, 120, 120));
         rd.drawRoundRect(315, 150, 270, 52, 20, 40);
-        rd.setFont(new Font("SansSerif", 1, 13));
+       rd.setFont(xtGraphics.fontAdventure.deriveFont(Font.BOLD,15));
         FontHandler.fMetrics = rd.getFontMetrics();
         drawcs(180, "Loading Stage " + i + ", please wait...", 0, 0, 0, 3);
         rd.drawImage(select, 273, 45, null);
         rd.drawImage(br, 0, 0, null);
-        rd.setFont(new Font("SansSerif", 1, 11));
+        rd.setFont(xtGraphics.fontAdventure.deriveFont(Font.BOLD,15));
         FontHandler.fMetrics = rd.getFontMetrics();
         drawcs(496, "You can also use Keyboard Arrows and Enter to navigate.", 255, 113, 250, 3);
         app.repaint();
@@ -746,7 +783,7 @@ public class xtGraphics extends Panel implements Runnable {
             } else {
                 duds = 0;
             }
-            rd.drawImage(dude[duds], 30, -10, null);
+            rd.drawImage(d4, 30, -10, null);
             rd.drawImage(oflaot, 127, 17, null);
         }
         rd.setColor(new Color(0, 0, 0));
@@ -870,6 +907,7 @@ public class xtGraphics extends Panel implements Runnable {
         }
         if (flipo == 1) {
             rd.setFont(new Font("SansSerif", 1, 13));
+            
             FontHandler.fMetrics = rd.getFontMetrics();
             drawcs(20, "Main Game Controls", 0, 0, 0, 3);
             rd.drawString("Drive your car using the Arrow Keys:", 60, 55);
@@ -1602,18 +1640,18 @@ public class xtGraphics extends Panel implements Runnable {
     }
 
     public void nofocus() {
-        rd.setColor(new Color(255, 255, 255));
-        rd.fillRect(0, 0, 900, 20);
+       // rd.setColor(new Color(255, 255, 255));
+       // rd.fillRect(0, 0, 900, 20);
     //  rd.fillRect(0, 0, 20, 500);
         //rd.fillRect(0, 500, 900, 20);
 //      rd.fillRect(900, 0, 20, 500);
-        rd.setColor(new Color(192, 192, 192)); 
+        //rd.setColor(new Color(192, 192, 192)); 
     //  rd.drawRect(135, 137, 630, 360);
-        rd.setColor(new Color(0, 0, 0));
+        //rd.setColor(new Color(0, 0, 0));
     //  rd.drawRect(137, 135, 626, 356);
         rd.setFont(new Font("SansSerif", 1, 11));
         FontHandler.fMetrics = rd.getFontMetrics();
-        drawcs(14, "Running away are we?   Click screen with mouse to continue.", 100, 100, 100, 3);
+        drawcs(14, "Running away are we?   Click screen with mouse to continue.", 255, 255, 255, 3);
         //drawcs(395, "Running away are we?  Click screen with mouse to continue.", 100, 100, 100, 3);
     }
     
@@ -1808,6 +1846,10 @@ public class xtGraphics extends Panel implements Runnable {
                 if(s.equals("addictdrm.gif"))
                 {
                     addictdrm = loadimage(abyte0, mediatracker, toolkit);
+                }
+                if(s.equals("loadingsstagebg.gif"))
+                {
+                    loadingscreenbg = loadimage(abyte0, mediatracker, toolkit);
                 }
                 
 
@@ -2405,15 +2447,15 @@ public class xtGraphics extends Panel implements Runnable {
                     
                     
                 
-               int num_cars = 7;
+           int num_cars = 7;
             for (int array_one = 0; array_one < num_cars && arrace; array_one++) {
                 boolean flag_status = false;
                 for (int array_two = 0; array_two < num_cars; array_two++) {
                     if (checkpoints.pos[array_two] == array_one && checkpoints.dested[array_two] == 0 && !flag_status) {
                         int y_value = 30; // use to move status up or down
-                        int x_value = 255;  // use to move status left or right
+                        int x_value = 225;  // use to move status left or right
                         
-                        rd.setColor(new Color(0, 0, 100));
+                        rd.setColor(new Color(255, 0, 0));
                         if (array_one == 0)
                             rd.drawString("1st", 543 + x_value, 76 + 30 + y_value * array_one);
                         if (array_one == 1)
@@ -2422,8 +2464,8 @@ public class xtGraphics extends Panel implements Runnable {
                             rd.drawString("3rd", 541 + x_value, 76 + 30 + y_value * array_one);
                         if (array_one >= 3)
                             rd.drawString((array_one + 1)+"th", 541 + x_value, 76 + y_value + 30 * array_one);
-                        rd.setColor(new Color(0, 0, 0));
-                        rd.drawString(names[sc[array_two]], 600 - ((FontHandler.fMetrics.stringWidth (names[sc[array_two]]))/2) + x_value, 70 + y_value + 30 * array_one);
+                        rd.setColor(new Color(255, 255, 255));
+                        rd.drawString(names[sc[array_two]], 600 - ((FontHandler.fMetrics.stringWidth(names[sc[array_two]]))/2) + x_value, 70 + y_value + 30 * array_one);
                         if (madness[0].im == array_two){
                             int red = (int) (159.0F + (159.0F * ((float) m.snap[0] / 100.0F)));
                             if (red > 255)
@@ -2440,7 +2482,7 @@ public class xtGraphics extends Panel implements Runnable {
                                 blue = 255;
                             if (blue < 0)
                                 blue = 0;
-                            rd.setColor(new Color(red, green, blue));
+                            rd.setColor(new Color(227, 162, 64));
                             rd.drawRect(531 + x_value, 58 + y_value + 30 * array_one, 114, 25);
                             rd.drawRect(532 + x_value, 59 + y_value + 30 * array_one, 112, 23);
                         }
@@ -2491,9 +2533,9 @@ public class xtGraphics extends Panel implements Runnable {
                         if (madness[0].missedcp > 0) {
                             if (madness[0].missedcp > 15 && madness[0].missedcp < 50) {
                                 if (flk) {
-                                    drawcs(70, "Checkpoint Missed!", 255, 0, 0, 0);
+                                    drawcs(70, "Wrong Way Pal . . .", 255, 0, 0, 0);
                                 } else {
-                                    drawcs(70, "Checkpoint Missed!", 255, 150, 0, 2);
+                                    drawcs(70, "Wrong Way Pal . . .", 255, 150, 0, 2);
                                 }
                             }
                             madness[0].missedcp++;
@@ -2510,10 +2552,10 @@ public class xtGraphics extends Panel implements Runnable {
                                 cntovn++;
                                 cntan = 40;
                                 if (flk) {
-                                    drawcs(70, "Wrong Way!", 255, 150, 0, 0);
+                                    drawcs(70, "Lost Buddy?", 255, 150, 0, 0);
                                     flk = false;
                                 } else {
-                                    drawcs(70, "Wrong Way!", 255, 0, 0, 2);
+                                    drawcs(70, "Lost Buddy?", 255, 0, 0, 2);
                                     flk = true;
                                 }
                             }
@@ -3203,7 +3245,7 @@ public class xtGraphics extends Panel implements Runnable {
                sc[5]=8;
                sc[4]=8;
                sc[3]=5;
-               sc[2]=7;
+               sc[2]=6;
                sc[1]=7;
             }
             if (i==4){
@@ -3399,11 +3441,13 @@ public class xtGraphics extends Panel implements Runnable {
         //stage descriptions
         
 
-        rd.setFont(new Font("SansSerif", 1, 11));
+        rd.setFont(xtGraphics.fontOpenSans.deriveFont(Font.BOLD,12));
         FontHandler.fMetrics = rd.getFontMetrics();
         rd.setColor(new Color(181, 120, 40));
         rd.drawString("Stage Description", 118, 318);
         
+        rd.setFont(xtGraphics.fontOpenSans.deriveFont(Font.BOLD,10));
+        FontHandler.fMetrics = rd.getFontMetrics();
         if(checkpoints.stage == 1)
         {
             rd.drawString("A barren landscape where the Hound Preys..", 43, 338);
@@ -3413,6 +3457,9 @@ public class xtGraphics extends Panel implements Runnable {
         {
             rd.drawString("The sands of time will warp your Mind..", 43, 338);
             rd.drawString("Be wary of the pack of Hounds, and keep up the Grind!", 43, 358);
+            
+            rd.setFont(xtGraphics.fontAdventure.deriveFont(Font.BOLD,13));
+            FontHandler.fMetrics = rd.getFontMetrics();
             
             rd.setColor(new Color(255, 0, 0));
             
@@ -3454,15 +3501,31 @@ public class xtGraphics extends Panel implements Runnable {
             rd.drawString("Something about the air.. just feels odd..", 43, 338);
             rd.drawString("The stillness in the night.. Something isn't right..", 43, 358);
             
-            rd.setColor(new Color(255, 0, 0));
             
+            rd.setFont(xtGraphics.fontAdventure.deriveFont(Font.BOLD,13));
+            FontHandler.fMetrics = rd.getFontMetrics();
+            
+            rd.setColor(new Color(255, 0, 0));
             rd.drawString("This is a Racing Only Stage. ", 43, 400); 
+        }
+        
+        if(checkpoints.stage == 7)
+        {
+            rd.drawString("Welcome to where the Titans Lay.", 43, 338);
+            rd.drawString("With all this fire around you, all you can do is Pray.", 43, 358);
+            
+            
+            rd.setFont(xtGraphics.fontAdventure.deriveFont(Font.BOLD,13));
+            FontHandler.fMetrics = rd.getFontMetrics();
+            
+            rd.setColor(new Color(255, 0, 0));
+            //rd.drawString("This is a Racing Only Stage. ", 43, 400); 
         }
         
         
         
         rd.drawImage(contin[pcontin], 405, 425, null);
-        rd.setFont(new Font("SansSerif", 1, 13));
+        rd.setFont(xtGraphics.fontAdventure.deriveFont(Font.BOLD,15));
         FontHandler.fMetrics = rd.getFontMetrics();
         drawcs(496, "You can also use Keyboard Arrows and Enter to navigate.", 255, 113, 250, 3);
         if(control.handb || control.enter)
@@ -3888,6 +3951,9 @@ public class xtGraphics extends Panel implements Runnable {
         MediaTracker mediatracker = new MediaTracker(app);
         hello = Toolkit.getDefaultToolkit().getImage(xtGraphics.class.getResource("hello.gif"));
         mediatracker.addImage(hello, 0);
+        
+        //NFA Fonts
+        
         try {
             mediatracker.waitForID(0);
         } catch (Exception _ex) {
@@ -3904,12 +3970,14 @@ public class xtGraphics extends Panel implements Runnable {
             mediatracker.waitForID(0);
         } catch (Exception _ex) {
         } 
+        
+        
         int i = 0;
         do {
             loadedt[i] = false;
         } while (++i < 17);
     }
-
+    
     public void maini(Control control) {
         cars.play();
         cars.loadMod(200, 7900, 125, sunny, macn);
@@ -4426,13 +4494,18 @@ public class xtGraphics extends Panel implements Runnable {
 
     public void clicknow() {
         
+        
+        rd.setFont(xtGraphics.fontAdventure.deriveFont(Font.BOLD,15));
+        FontHandler.fMetrics = rd.getFontMetrics();
         if (aflk) {
             drawcs(400, "Click here to Start", 255, 255, 255, 3);
             aflk = false;
-        } else {
-            drawcs(400, "Click here to Start", 0, 67, 200, 3);
+        }
+         else {
+            drawcs(400, "Click here to Start", 255, 255, 255, 3);
             aflk = true;
         }
+        
     }
 
     private Image loadimage(byte abyte0[], MediaTracker mediatracker, Toolkit toolkit) {
@@ -4592,8 +4665,7 @@ public class xtGraphics extends Panel implements Runnable {
         cars.play();
         if (flatrstart == 6) {
             rd.drawImage(carsbg, 0, 0, null);
-        } else if (flatrstart <= 1) {
-            drawSmokeCarsbg();
+        
         } else {
             rd.setColor(new Color(255, 255, 255));
             rd.fillRect(0, 0, 900, 500);
@@ -4602,13 +4674,15 @@ public class xtGraphics extends Panel implements Runnable {
         }
         rd.drawImage(selectcar, -2, -10, null);
         m.crs = true; // Not sure but it has something to do with cars. CHANGING TO FALSE WILL MAKE SHADOWS DISAPPEAR!
-        m.x = -450; // Moves the car on the X axis
-        m.y = -500; // Moves the car on the Y axis
-        m.z = 200; // Moves the car on the Z axis
+        m.x = -440; // Moves the car on the X axis
+        m.y = -545; // Moves the car on the Y axis
+        m.z = 0; // Moves the car on the Z axis
         m.xz = 0; // Moves the car on the X and Z axis
         m.zy = 10; // Moves the car on the Z and Y axis
         m.ground = 470; // Moves the car's shadow up or down
         aconto[sc[0]].d(rd); // Has something to do with cars and ContO
+        
+        
         if ((sc[0] - 7) * 2 >= unlocked) {
              aconto[sc[0]].blackout = true;
         }
@@ -4628,12 +4702,15 @@ public class xtGraphics extends Panel implements Runnable {
                 aflk = true;
             }
             aconto[sc[0]].z = 950;
-            if (sc[0] == 13) {
-                aconto[sc[0]].z = 1000;
+            if (sc[0] == 14) {
+                aconto[sc[0]].z = 1100;
             }
+            
+            
+           
             aconto[sc[0]].y = -34 - aconto[sc[0]].grat;
             aconto[sc[0]].x = 0;
-            aconto[sc[0]].xz += 5;
+            aconto[sc[0]].xz += 3;
             aconto[sc[0]].zy = 0;
             aconto[sc[0]].wzy -= 10;
             if (aconto[sc[0]].wzy < -45) {
@@ -4648,55 +4725,57 @@ public class xtGraphics extends Panel implements Runnable {
                 
     
             //crediting car makers
+            rd.setFont(xtGraphics.fontOpenSans.deriveFont(Font.ITALIC,13));
+            FontHandler.fMetrics = rd.getFontMetrics();
 
             
             if (sc[0] == 0) {
-                drawcs(365,"Made by GX and ToaZuka", 239, 122, 244, 1);
+                drawcs(395,"Made by GX and ToaZuka", 239, 122, 244, 1);
              }
             if (sc[0] == 1) {
-                drawcs(365, "Made by Afterburn and ToaZuka", 239, 122, 244, 1);
+                drawcs(395, "Made by Afterburn and ToaZuka", 239, 122, 244, 1);
              }
             if (sc[0] == 2) {
-                drawcs(365, "Made by Rulue",239, 122, 244, 1);
+                drawcs(395, "Made by Rulue",239, 122, 244, 1);
              }
             if (sc[0] == 3) {
-                drawcs(365, "Made by Gx", 239, 122, 244, 1);
+                drawcs(395, "Made by GX", 239, 122, 244, 1);
              }
             if (sc[0] == 4) {
-                drawcs(365, "Made by Tunari", 239, 122, 244, 1);
+                drawcs(395, "Made by Tunari", 239, 122, 244, 1);
              }
             if (sc[0] == 5) {
-                drawcs(365, "Made by reed and ToaZuka", 239, 122, 244, 1);
+                drawcs(395, "Made by reed and ToaZuka", 239, 122, 244, 1);
              }
             if (sc[0] == 6) {
-                drawcs(365, "Made by Tunari", 239, 122, 244, 1);
+                drawcs(395, "Made by Tunari", 239, 122, 244, 1);
              }
             if (sc[0] == 7) {
-                drawcs(365, "Made by Chaotic/Juiceman", 239, 122, 244, 1);
+                drawcs(395, "Made by Chaotic/Juiceman", 239, 122, 244, 1);
              }
             if (sc[0] == 8) {
-                drawcs(365, "Made by reed", 239, 122, 244, 1);
+                drawcs(395, "Made by reed", 239, 122, 244, 1);
              }
             if (sc[0] == 9) {
-                drawcs(365, "Made by Tunari", 239, 122, 244, 1);
+                drawcs(395, "Made by Tunari", 239, 122, 244, 1);
              }
             if (sc[0] == 10) {
-                drawcs(365, "Made by reed", 239, 122, 244, 1);
+                drawcs(395, "Made by reed", 239, 122, 244, 1);
              }
             if (sc[0] == 11) {
-                drawcs(365, "Made by Veloster", 239, 122, 244, 1);
+                drawcs(395, "Made by Veloster", 239, 122, 244, 1);
              }
             if (sc[0] == 12) {
-                drawcs(365, "Made by FATCAT", 239, 122, 244, 1);
+                drawcs(395, "Made by FATCAT", 239, 122, 244, 1);
              }
             if (sc[0] == 13) {
-                drawcs(365, "Made by KRC", 239, 122, 244, 1);
+                drawcs(395, "Made by KRC", 239, 122, 244, 1);
              }
             if (sc[0] == 14) {
-                drawcs(365, "Made by FATCAT", 239, 122, 244, 1);
+                drawcs(395, "Made by FATCAT", 239, 122, 244, 1);
              }
             if (sc[0] == 15) {
-                drawcs(365, "Sorry not enough replay data to play available, please try again later", 239, 122, 244, 1);
+                drawcs(395, "Made by FATCAT", 239, 122, 244, 1);
              }
             
             
@@ -4738,11 +4817,11 @@ public class xtGraphics extends Panel implements Runnable {
                 }
                 if (flatrstart == 6) {
                     drawcs(240, "[ Car Locked ]", 210, 210, 210, 3);
-                    drawcs(260, "This car unlocks when stage " + (sc[0] - 7) * 2 + " is completed...", 255, 113, 250, 3);
+                    drawcs(260, "This car unlocks when stage " + (sc[0] - 7) * 2 + " is completed...", 255, 0, 0, 3);
                 }
             } else {
                 if (flatrstart == 6) {
-                    rd.setFont(new Font("SansSerif", 1, 11));
+                    rd.setFont(new Font("bruh", 1, 11));
                     //statbo, 97, 312, null); placement of borders
                     FontHandler.fMetrics = rd.getFontMetrics();
                     rd.setColor(new Color(126, 79, 251));
@@ -4753,12 +4832,12 @@ public class xtGraphics extends Panel implements Runnable {
                     rd.drawString("Handling:", 148, 440);
                     rd.drawImage(statb, 202, 433, null);
                     
-                    rd.drawString("Stunts:", 589, 410);
-                    rd.drawImage(statb, 630, 403, null);
-                    rd.drawString("Strength:", 577, 425);
-                    rd.drawImage(statb, 630, 418, null);
-                    rd.drawString("Endurance:", 567, 440);
-                    rd.drawImage(statb, 630, 433, null);
+                    rd.drawString("Stunts:", 569, 410);
+                    rd.drawImage(statb, 610, 403, null);
+                    rd.drawString("Strength:", 557, 425); 
+                    rd.drawImage(statb, 610, 418, null);
+                    rd.drawString("Endurance:", 547, 440);
+                    rd.drawImage(statb, 610, 433, null);
                     rd.setColor(new Color(0, 0, 0));
                     
                     //animating statbars
@@ -4829,7 +4908,7 @@ public class xtGraphics extends Panel implements Runnable {
                     if (f > 1.0F) {
                         f = 1.0F;
                     }
-                    rd.fillRect((int) (630 + 156F * statrate[3]), 403, (int) (156F * (1.0F - statrate[3]) + 1.0F), 7);
+                    rd.fillRect((int) (610 + 156F * statrate[3]), 403, (int) (156F * (1.0F - statrate[3]) + 1.0F), 7);
                     
                     //strength
                     
@@ -4850,7 +4929,7 @@ public class xtGraphics extends Panel implements Runnable {
                     if (f > 1.0F) {
                         f = 1.0F; 
                     }
-                    rd.fillRect((int) (630 + 156F * statrate[4]), 418, (int) (156F * (1.0F - statrate[4]) + 1.0F), 7);
+                    rd.fillRect((int) (610 + 156F * statrate[4]), 418, (int) (156F * (1.0F - statrate[4]) + 1.0F), 7);
                     //endurance
                     f = outdam[sc[0]];
                     if(statrate[5] > f)
@@ -4862,13 +4941,13 @@ public class xtGraphics extends Panel implements Runnable {
                         statrate[5] += 0.015F;
                     }
                     
-                    rd.fillRect((int) (630 + 156F * statrate[5]), 433, (int) (156F * (1.0F - statrate[5]) + 1.0F), 7);
+                    rd.fillRect((int) (610 + 156F * statrate[5]), 433, (int) (156F * (1.0F - statrate[5]) + 1.0F), 7);
                     rd.drawImage(statbo, 202, 403, null);
                     rd.drawImage(statbo, 202, 418, null);
                     rd.drawImage(statbo, 202, 433, null);
-                    rd.drawImage(statbo, 630, 403, null);
-                    rd.drawImage(statbo, 630, 418, null);
-                    rd.drawImage(statbo, 630, 433, null);
+                    rd.drawImage(statbo, 610, 403, null);
+                    rd.drawImage(statbo, 610, 418, null);
+                    rd.drawImage(statbo, 610, 433, null);
                 }
                 rd.drawImage(contin[pcontin], 405, 460, null);
             }
@@ -5212,32 +5291,6 @@ public class xtGraphics extends Panel implements Runnable {
     }
 
     public void hipnoload(int i, boolean flag) {
-        int j = (int) (230F - 230F * (m.snap[0] / (100F * hipno[i - 1])));
-        if (j > 255) {
-            j = 255;
-        }
-        if (j < 0) {
-            j = 0;
-        }
-        int l = (int) (230F - 230F * (m.snap[1] / (100F * hipno[i - 1])));
-        if (l > 255) {
-            l = 255;
-        }
-        if (l < 0) {
-            l = 0;
-        }
-        int j1 = (int) (230F - 230F * (m.snap[2] / (100F * hipno[i - 1])));
-        if (j1 > 255) {
-            j1 = 255;
-        }
-        if (j1 < 0) {
-            j1 = 0;
-        }
-        if (i == 1) {
-            j = 230;
-            l = 230;
-            j1 = 230;
-        }
         
             
             
@@ -5245,10 +5298,11 @@ public class xtGraphics extends Panel implements Runnable {
         
         /*rd.setColor(new Color(233, 190, 243));
         rd.fillRect(0, 0, 900, 500);*/
-        rd.drawImage(bgmain, 0, 0, null);
+        //stageloadingscreen
+        rd.drawImage(loadingscreenbg, 0, 0, null);
         rd.setFont(new Font("SansSerif", 1, 13));
         FontHandler.fMetrics = rd.getFontMetrics();
-        drawcs(25, asay, 0, 0, 0, 3);
+        drawcs(25, asay, 255, 255, 255, 3);
         byte byte0 = -90;
         if(i == 1 || i == 2 || i == 3 || i == 4 || i == 5 || i == 6 || i == 7 || i == 8 || i == 9 || i == 10 || i == 11 || i == 12
                 || i == 13 || i == 14 || i == 15 || i == 16 || i == 17) {
@@ -5272,35 +5326,9 @@ public class xtGraphics extends Panel implements Runnable {
             }*/
             rd.drawImage(d4, 145, 10, null);
             rd.drawImage(flaot, 242, 42, null);
-            int k = (int) (31F - 10F * (m.snap[0] / (50F * hipno[i - 1])));
-            if (k > 255) {
-                k = 255;
-            }
-            if (k < 0) {
-                k = 0;
-            }
-            int i1 = (int) (10F - 10F * (m.snap[1] / (50F * hipno[i - 1])));
-            if (i1 > 255) {
-                i1 = 255;
-            }
-            if (i1 < 0) {
-                i1 = 0;
-            }
-            int k1 = (int) (10F - 10F * (m.snap[2] / (50F * hipno[i - 1])));
-            if (k1 > 255) {
-                k1 = 255;
-            }
-            if (k1 < 0) {
-                k1 = 0;
-            }
-            if (i == 1) {
-                k = 10;
-                i1 = 10;
-                k1 = 10;
-            }
-            
             //in stage descriptions
-            rd.setColor(new Color(k, i1, k1));
+            
+            rd.setColor(new Color(0, 0, 0));
             rd.setFont(new Font("SansSerif", 1, 13));
             if (i == 1) {
                 rd.drawString("In this Cold World, the Hound can sniff out your fear.", 312, 67);
@@ -5337,9 +5365,9 @@ public class xtGraphics extends Panel implements Runnable {
                 
             }
             if (i == 7) {
-                rd.drawString("Welcome to the realm of the king...", 312, 67);
-                rd.drawString("The key word here is 'POWER'.  The more you have of it the faster", 312, 107);
-                rd.drawString("and STRONGER you car will be!", 312, 127);
+                rd.drawString("Welcome to the Prison for Prometheus Don't let him escape!", 312, 67);
+                rd.drawString("Avoid the Vansquishers trying to pound you to dust while racing!", 312, 107);
+                rd.drawString("Or better yet.. End their SUFFERING.", 312, 127);
             }
             if (i == 8) {
                 rd.drawString("Watch out, EL KING is out to get you now!", 312, 67);
@@ -5371,14 +5399,14 @@ public class xtGraphics extends Panel implements Runnable {
                 rd.drawString("maze!  GOOD LUCK!", 312, 147);
             }
         }
-        rd.drawImage(loadingmusic, 334, 200 + byte0, null);
+        rd.drawImage(loadingmusic, 334, 250 + byte0, null);
         rd.setFont(new Font("SansSerif", 1, 11));
         FontHandler.fMetrics = rd.getFontMetrics();
         if (!flag) {
-            drawcs(415 + byte0, "" + sndsize[i - 1] + " KB", 0, 0, 0, 3);
-            drawcs(450 + byte0, " Loading Stage...", 0, 0, 0, 3);
+            drawcs(415 + byte0, "" + sndsize[i - 1] + " KB", 255, 255, 255, 3);
+            drawcs(450 + byte0, " Loading Stage...", 255, 255, 255, 3);
         } else {
-            drawcs(440 + byte0, "Loading complete!  Press Start to begin...", 0, 0, 0, 3);
+            drawcs(440 + byte0, "Loading complete!  Press Start to begin...", 255, 255, 255, 3);
             rd.drawImage(star[pstar], 409, 460 + byte0, null);
             if (pstar != 2) {
                 if (pstar == 0) {

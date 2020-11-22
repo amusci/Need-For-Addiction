@@ -101,7 +101,7 @@ public class Control {
                     clrnce = 2;
                     
                     if (checkpoints.stage == 1) {
-                        clrnce = 2;
+                        clrnce = 3;
                                                         
                     }
                     
@@ -111,7 +111,7 @@ public class Control {
                                                         
                     }
                     if (checkpoints.stage == 4) {
-                        clrnce = 2;
+                        clrnce = 3;
                                                         
                     }
                     if (checkpoints.stage == 5) {
@@ -164,8 +164,17 @@ public class Control {
                     //skipping turns
                     
                     if (checkpoints.stage == 1) {
-                        skiplev = 0.0F;
+                        skiplev = 0.75F;
                         }
+                    if (checkpoints.stage == 3) {
+                        skiplev = 1.0F;
+                        }
+                    if (checkpoints.stage == 4) {
+                        skiplev = .9F;
+                        }
+                    if (checkpoints.stage == 5) {
+                        skiplev = .9F;
+                        }    
                         
                     if (checkpoints.stage == 8) {
                         if (madness.pcleared >= 10 && madness.pcleared <= 24) {
@@ -220,7 +229,7 @@ public class Control {
                         //turning AI
                         
                         if (checkpoints.stage == 1) {
-                            turntyp = 0;
+                            turntyp = 2;
                         }
                         if (checkpoints.stage == 2) {
                             turntyp = 0;
@@ -269,7 +278,7 @@ public class Control {
                     } else {
                         cntrn--;
                     }
-                    saftey = (int) ((98F - madness.power) / 2.0F * (m.random() / 2.0F + 0.5D));
+                    saftey = 30;
                     if (saftey > 20) {
                         saftey = 20;
                     }
@@ -282,8 +291,8 @@ public class Control {
                     if (checkpoints.stage == 2) {
                         f = 0.4F;
                     }  
-                    mustland = f + (float) (m.random() / 2.0F - 0.25D);
-                    f = 1.0F;
+                    mustland = 0F;
+                    
                     if (checkpoints.stage == 1) {
                         
                     }
@@ -600,13 +609,23 @@ public class Control {
                                     }
 
                                     //Ai race or waste
-                                    
-                                    
                                     if (checkpoints.stage == 1) {
-                                        f2 = 0.7F;
+                                        if (madness.cn == 8 || madness.cn == 5){
+                                           f2 = 10.0F;
                                         attack = 5000;
+                                        }
+                                        else{
+                                             f2 = 0F;
+                                             }
+
+                                        
                                         
                                     }
+                                    
+                                        
+                                        
+                                        
+                                    
                                     
                                     if (checkpoints.stage == 2) {
                                         
@@ -616,10 +635,10 @@ public class Control {
                                     }
                                     
                                     if (checkpoints.stage == 3) {
-                                        if (madness.cn == 8 || madness.cn == 13 && bulistc) {
+                                        if (madness.cn == 8) {
                                             f2 *= 2.0F;
                                         } else {
-                                            f2 *= 0.5F;
+                                            f2 *= 0F;
                                         }
                                     }
                                     
@@ -828,7 +847,7 @@ public class Control {
                                                 checkpoints.opz[i4] / 100) < 300
                                         && m.random() > 0.59999999999999998D
                                                 - checkpoints.pos[madness.im] / 10F) {
-                                    clrnce = 0;
+                                    clrnce = 2;
                                     acuracy = 0;
                                 }
                             }
@@ -1635,7 +1654,7 @@ public class Control {
                 for (; pan > 180; pan -= 360) {
                 }
                 if (wall != -1 && hold == 0) {
-                    clrnce = 0;
+                    clrnce = 2;
                 }
                 if (hold == 0) {
                     if (Math.abs(j - pan) < 180) {
@@ -2095,10 +2114,19 @@ public class Control {
             statusque = 0;
         }
         if (checkpoints.stage == 6 || checkpoints.stage == 8) {
-            hold = 50;
+            hold = 0;
         }
         if (checkpoints.stage == 7) {
-            hold = 10;
+            hold = 0;
+        }
+        if (checkpoints.stage == 9) {
+            if (i != 12) {
+                hold = 35;
+                revstart = 25;
+            } else {
+                hold = 5;
+            }
+            statusque = 0;
         }
         if (checkpoints.stage == 10) {
             hold = 30;
@@ -2195,7 +2223,7 @@ public class Control {
         upwait = 0;
         agressed = false;
         skiplev = 1.0F;
-        clrnce = 5;
+        clrnce = 2;
         rampp = 0;
         turntyp = 0;
         aim = 0.0F;
