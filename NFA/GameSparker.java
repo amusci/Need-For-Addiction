@@ -35,7 +35,7 @@ public class GameSparker extends Applet implements Runnable {
             "soffroad" , 
     };
 
-    public static final String extraModels[] = {"offhill"/*49*/};
+    public static final String extraModels[] = {"offhill",/*49*/"sdroad",/*50*/ "twister1d", /*51*/"twister2d",/*52*/ "dustyend",/*53*/ "dustramp1",/*54*/ "dustramp2",/*55*/ "dramp2",/*56*/ "bramp",/*57*/ "broad", /*58*/"quarterpipe"/*59*/};
     
     /**
      * false to disable splash
@@ -839,7 +839,7 @@ nob++;
         /**
          * this bit in here reads cookies and set values
          */     
-        l = readcookie("unlocked");
+        l = 1;//readcookie("unlocked");
         if (l >= 1 && l <= 17) {         
             /*
              * Note: that is an L

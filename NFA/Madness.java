@@ -125,21 +125,21 @@ public class Madness {
      * @author Omar Waly
      */
     public static int turn[] = {
-            6, 11, 5, 7, 8, 6, 5, 5, 12, 10, 10, 10, 10, 10, 15, 20
+            6, 11, 5, 7, 8, 6, 5, 5, 12, 10, 10, 10, 10, 10, 15, 90
     };
     /**
      * Grip of the car to the ground
      * @author Omar Waly
      */
     public static float grip[] = {
-            17F, 31F, 15F, 18F, 19F, 17F, 25F, 20F, 20F, 40F, 22.5f, 45.0f, 30.0f, 27.0f, 25.0f, 27.0f
+            17F, 31F, 15F, 18F, 19F, 17F, 25F, 20F, 20F, 40F, 22.5f, 45.0f, 30.0f, 27.0f, 25.0f, 127.0f
     };
     /**
      * How much your car bounces after landing stunts
      * @author Omar Waly
      */
     public static float bounce[] = {
-            1.0F, 1.05F, 1.2F, 1.1F, 1.0F, 1.35F, 1.15F, 1.1F, 1.2F, 1.0F, 1.15f, 0.8f, 1.05f, 0.8f, 1.1f, 1.15f
+            1.0F, 1.05F, 1.2F, 1.1F, 1.0F, 1.35F, 1.15F, 1.1F, 1.2F, 1.0F, 1.15f, 0.8f, 1.05f, 0.8f, 1.1f, 0f
     };
     /**
      * Tolerance towards track pieces
@@ -153,7 +153,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static float moment[] = {
-            1.0f, 0.25f, 1.1f, 1.0f, 1.1f, 1.38f, 1.6f, .75f, 2.0f, 1.38f, 2.5f, 1.0f, 4.0f, .5f, 5.5f, 2.0f
+            1.0f, 0.25f, 1.1f, 1.0f, 1.1f, 1.38f, 1.6f, .75f, 2.0f, 1.38f, 2.5f, 1.0f, 4.0f, .5f, 5.5f, 10.0f
     };
     /**
      * Tolerance towards other cars
@@ -167,7 +167,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static int push[] = {
-            2, 2, 3, 3, 2, 2, 2, 4, 2, 2, 2, 4, 2,1, 4, 2,
+            2, 2, 3, 3, 2, 2, 2, 4, 2, 2, 2, 4, 2,1, 4, 12,
     };
     /**
      * The amount of "reverse push" or recoil the car will get from others
@@ -231,7 +231,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static float dammult[] = {
-            0.7F, .75F, 0.35F, .63F, 0.6F, .35F, 0.85F, 0.65F, 0.25F, 0.36F, 0.30f, 0.35F, 0.35F, 0.256F, 0.36F, 0.26F, 0.46F
+            0.7F, .75F, 0.35F, .63F, 0.6F, .35F, 0.85F, 0.65F, 0.25F, 0.36F, 0.30f, 0.35F, 0.35F, 0.256F, 0.36F, 0.26F, 0.1F
     };
     /**
      * The amount of Damage that a car can take before it is considered as "wasted".

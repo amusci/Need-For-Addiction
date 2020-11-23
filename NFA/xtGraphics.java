@@ -2592,7 +2592,7 @@ public class xtGraphics extends Panel implements Runnable {
                     rd.drawImage(lap, 15, 7, null);
                     rd.setColor(new Color(0, 0, 100));
                     rd.drawString("" + (madness[0].nlaps + 1) + " / " + checkpoints.nlaps + "", 50, 18);
-                    rd.drawImage(was, 80, 7, null);
+                    rd.drawImage(was, 80, 8, null);
                     rd.setColor(new Color(0, 0, 100));
                     rd.drawString("" + checkpoints.wasted + " / 6", 145, 18);
                     rd.drawImage(pos, 35, 27, null);
