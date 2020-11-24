@@ -783,171 +783,167 @@ public class xtGraphics extends Panel implements Runnable {
             } else {
                 duds = 0;
             }
-            rd.drawImage(d4, 30, -10, null);
-            rd.drawImage(oflaot, 127, 17, null);
+            rd.drawImage(d4, 145, -10, null);
+            rd.drawImage(oflaot, 242, 17, null);
         }
         rd.setColor(new Color(0, 0, 0));
         rd.setFont(new Font("SansSerif", 1, 13));
-        if (flipo == 3 || flipo == 5) {
+        if (flipo == 3 || flipo == 5) {//2-3 page
             if (flipo == 3) {
-                rd.drawString("Hello!  Welcome to the world of", 197, 42);
-                rd.drawString("!", 592, 42);
-                rd.drawImage(nfm, 404, 30, null);
-                rd.drawString("In this game there are two ways to complete a stage.", 197, 82);
-                rd.drawString("One is by racing and finishing in first place, the other is by", 197, 102);
-                rd.drawString("wasting and crashing all the other cars in the stage!", 197, 122);
+                rd.drawString("Hello!  This will be changed eventually.", 312, 42);
+                
+                //
+                rd.drawImage(nfm, 519, 30, null);
+                rd.drawString("In this game there are two ways to complete a stage.", 312, 82);
+                rd.drawString("One is by racing and finishing in first place, the other is by", 312, 102);
+                rd.drawString("wasting and crashing all the other cars in the stage!", 312, 122);
             } else {
                 rd.setColor(new Color(100, 100, 100));
-                rd.drawString("While racing, you will need to focus on going fast and passing", 197, 42);
-                rd.drawString("through all the checkpoints in the track. To complete a lap, you", 197, 62);
-                rd.drawString("must not miss a checkpoint.", 197, 82);
-                rd.drawString("While wasting, you will just need to chase the other cars and", 197, 102);
-                rd.drawString("crash into them (without worrying about track and checkpoints).", 197, 122);
+                rd.drawString("While racing, you will need to focus on going fast and passing", 312, 42);
+                rd.drawString("through all the checkpoints in the track. To complete a lap, you", 312, 62);
+                rd.drawString("must not miss a checkpoint.", 312, 82);
+                rd.drawString("While wasting, you will just need to chase the other cars and", 312, 102);
+                rd.drawString("crash into them (without worrying about track and checkpoints).", 312, 122);
                 rd.setColor(new Color(0, 0, 0));
             }
-            rd.drawImage(racing, 100, 160, null);
-            rd.drawImage(ory, 364, 210, null);
-            rd.drawImage(wasting, 427, 160, null);
+            rd.drawImage(racing, 215, 160, null);
+            rd.drawImage(ory, 479, 210, null);
+            rd.drawImage(wasting, 542, 160, null);
             rd.setFont(new Font("SansSerif", 1, 11));
-            rd.drawString("Checkpoint", 327, 164);
+            rd.drawString("Checkpoint", 442, 164);
             rd.setFont(new Font("SansSerif", 1, 13));
-            rd.drawString("Drive your car using the Arrow Keys and Spacebar :", 60, 295);
-            rd.drawImage(space, 106, 330, null);
-            rd.drawImage(arrows, 440, 298, null);
+            rd.drawString("Drive your car using the Arrow Keys and Spacebar :", 175, 295);
+            rd.drawImage(space, 221, 330, null);
+            rd.drawImage(arrows, 555, 298, null);
             rd.setFont(new Font("SansSerif", 1, 11));
-            rd.drawString("(When your car is on the ground Spacebar is for Handbrake)", 60, 316);
-            rd.drawString("Accelerate", 450, 294);
-            rd.drawString("Brake/Reverse", 441, 372);
-            rd.drawString("Turn left", 389, 350);
-            rd.drawString("Turn right", 525, 350);
-            rd.drawString("Handbrake", 182, 349);
+            rd.drawString("(When your car is on the ground Spacebar is for Handbrake)", 175, 316);
+            rd.drawString("Accelerate", 565, 294);
+            rd.drawString("Brake/Reverse", 555, 372);
+            rd.drawString("Turn left", 504, 350);
+            rd.drawString("Turn right", 640, 350);
+           
         }
-        if (flipo == 7 || flipo == 9) {
+        if (flipo == 7 || flipo == 9) { // 4-5 page
             if (flipo == 7) {
-                rd.drawString("Whether you are racing or wasting the other cars you will need", 197, 42);
-                rd.drawString("to power up your car.", 197, 62);
-                rd.drawString("=> More 'Power' makes your car become faster and stronger!", 197, 82);
-                rd.drawString("To power up your car (and keep it powered up) you will need to", 197, 102);
-                rd.drawString("perform stunts!", 197, 122);
-                rd.drawImage(chil, 102, 270, null);
+                rd.drawString("Whether you are racing or wasting the other cars you will need", 312, 42);
+                rd.drawString("to power up your car.", 312, 62);
+                rd.drawString("=> More 'Power' makes your car become faster and stronger!", 312, 82);
+                rd.drawString("To power up your car (and keep it powered up) you will need to", 312, 102);
+                rd.drawString("perform stunts!", 312, 122);
+                
             } else {
-                rd.drawString("The better the stunt the more power you get!", 197, 42);
+                rd.drawString("The better the stunt the more power you get!", 312, 42);
                 rd.setColor(new Color(100, 100, 100));
-                rd.drawString("Forward looping pushes your car forwards in the air and helps", 197, 62);
-                rd.drawString("when racing. Backward looping pushes your car upwards giving it", 197, 82);
-                rd.drawString("more hang time in the air making it easier to control its landing.", 197, 102);
-                rd.drawString("Left and right rolls shift your car in the air left and right slightly.", 197, 122);
-                if (aflk || dudo < 150) {
-                    rd.drawImage(chil, 102, 270, null);
-                }
-                rd.setColor(new Color(0, 0, 0));
+                rd.drawString("Forward looping pushes your car forwards in the air and helps", 312, 62);
+                rd.drawString("when racing. Backward looping pushes your car upwards giving it", 312, 82);
+                rd.drawString("more hang time in the air making it easier to control its landing.", 312, 102);
+                rd.drawString("Left and right rolls shift your car in the air left and right slightly.", 312, 122);
+                
             }
-            rd.drawImage(stunts, 40, 150, null);
-            rd.drawImage(opwr, 475, 228, null);
+            rd.drawImage(stunts, 155, 150, null);
+            
             rd.setFont(new Font("SansSerif", 1, 13));
-            rd.drawString("To perform stunts. When your car is in the AIR;", 60, 285);
-            rd.drawString("Press combo Spacebar + Arrow Keys :", 60, 305);
-            rd.drawImage(space, 120, 330, null);
-            rd.drawImage(plus, 340, 333, null);
-            rd.drawImage(arrows, 426, 298, null);
+            rd.drawString("To perform stunts. When your car is in the AIR;", 175, 285);
+            rd.drawString("Press combo Spacebar + Arrow Keys :", 175, 305);
+            rd.drawImage(space, 235, 330, null);
+            rd.drawImage(arrows, 555, 298, null);
             rd.setFont(new Font("SansSerif", 1, 11));
             rd.setColor(new Color(0, 0, 0));
-            rd.drawString("Forward Loop", 427, 294);
-            rd.drawString("Backward Loop", 425, 372);
-            rd.drawString("Left Roll", 378, 350);
-            rd.drawString("Right Roll", 511, 350); 
-            rd.drawString("Spacebar", 201, 349);
-            rd.setColor(new Color(140, 243, 244));
-            rd.fillRect(537, 232, 76, 9);
+            rd.drawString("Forward Loop", 565, 294);
+            rd.drawString("Backward Loop", 555, 372);
+            rd.drawString("Left Roll", 504, 350);
+            rd.drawString("Right Roll", 640, 350); 
+           
+            
         }
-        if (flipo == 11 || flipo == 13) {
+        if (flipo == 11 || flipo == 13) { //6-7 page
             if (flipo == 11) {
-                rd.drawString("When wasting cars, to help you find the other cars in the stage,", 197, 42);
-                rd.drawString("press [ A ] to toggle the guidance arrow from pointing to the track", 197, 62);
-                rd.drawString("to pointing to the cars.", 197, 82);
-                rd.drawString("When your car is damaged. You fix it (and reset its 'Damage') by", 197, 102);
-                rd.drawString("jumping through the electrified hoop.", 197, 122);
+                rd.drawString("When wasting cars, to help you find the other cars in the stage,", 312, 42);
+                rd.drawString("press [ A ] to toggle the guidance arrow from pointing to the track", 312, 62);
+                rd.drawString("to pointing to the cars.", 312, 82);
+                rd.drawString("When your car is damaged. You fix it (and reset its 'Damage') by", 312, 102);
+                rd.drawString("jumping through the electrified hoop.", 312, 122);
             } else {
                 rd.setColor(new Color(100, 100, 100));
-                rd.drawString("You will find that in some stages it's easier to waste the other cars", 197, 42);
-                rd.drawString("and in some others it's easier to race and finish in first place.", 197, 62);
-                rd.drawString("It is up to you to decide when to waste and when to race.", 197, 82);
-                rd.drawString("And remember, 'Power' is an important factor in the game. You", 197, 102);
-                rd.drawString("will need it whether you are racing or wasting!", 197, 122);
+                rd.drawString("You will find that in some stages it's easier to waste the other cars", 312, 42);
+                rd.drawString("and in some others it's easier to race and finish in first place.", 312, 62);
+                rd.drawString("It is up to you to decide when to waste and when to race.", 312, 82);
+                rd.drawString("And remember, 'Power' is an important factor in the game. You", 312, 102);
+                rd.drawString("will need it whether you are racing or wasting!", 312, 122);
                 rd.setColor(new Color(0, 0, 0));
             }
-            rd.drawImage(fixhoop, 120, 193, null);
-            rd.drawImage(sarrow, 320, 203, null);
+            rd.drawImage(fixhoop, 235, 193, null);
+            rd.drawImage(sarrow, 435, 203, null);
             rd.setFont(new Font("SansSerif", 1, 11));
             rd.drawString("The Electrified Hoop", 127, 191);
             rd.drawString("Jumping through it fixes your car.", 93, 313);
             rd.drawString("Make guidance arrow point to cars.", 320, 191);
         }
-        if (flipo == 15) {
-            rd.drawString("There is a total of 17 stages!", 197, 42);
-            rd.drawString("Every two stages completed a new car will be unlocked!", 197, 62);
-            rd.drawString("I am Coach Insano by the way.", 197, 102);
-            rd.drawString("I am your coach and narrator in this game!  Good Luck!", 197, 122);
-            rd.drawString("Other Controls :", 90, 180);
+        if (flipo == 15) { //8
+            rd.drawString("There is a total of 17 stages!", 357, 42);
+            rd.drawString("Every two stages completed a new car will be unlocked!", 357, 62);
+            rd.drawString("I am Coach Insano by the way.", 357, 102);
+            rd.drawString("I am your coach and narrator in this game!  Good Luck!", 357, 122);
+            rd.drawString("Other Controls :", 317, 180);
             rd.setFont(new Font("SansSerif", 1, 11));
-            rd.drawImage(kz, 100, 200, null);
-            rd.drawString("OR", 141, 226);
-            rd.drawImage(kx, 160, 200, null);
-            rd.drawString("=> To look behind you while driving.", 202, 226);
-            rd.drawImage(kv, 100, 250, null);
-            rd.drawString("Change Views", 142, 276);
-            rd.drawImage(kp, 100, 300, null);
-            rd.drawString("OR", 141, 326);
-            rd.drawImage(kenter, 160, 300, null);
-            rd.drawString("Pause Game", 287, 326);
-            rd.drawImage(km, 420, 200, null);
-            rd.drawString("Mute Music", 462, 226);
-            rd.drawImage(kn, 420, 250, null);
-            rd.drawString("Mute Sound Effects", 462, 276);
+            rd.drawImage(kz, 215, 200, null);
+            rd.drawString("OR", 256, 226);
+            rd.drawImage(kx, 275, 200, null);
+            rd.drawString("=> To look behind you while driving.", 317, 226);
+            rd.drawImage(kv, 215, 250, null);
+            rd.drawString("Change Views", 257, 276);
+            rd.drawImage(kp, 215, 300, null);
+            rd.drawString("OR", 256, 326);
+            rd.drawImage(kenter, 275, 300, null);
+            rd.drawString("Pause Game", 402, 326);
+            rd.drawImage(km, 535, 200, null);
+            rd.drawString("Mute Music", 577, 226);
+            rd.drawImage(kn, 535, 250, null);
+            rd.drawString("Mute Sound Effects", 577, 276);
         }
-        if (flipo == 1) {
+        if (flipo == 1) {//first papge
             rd.setFont(new Font("SansSerif", 1, 13));
             
             FontHandler.fMetrics = rd.getFontMetrics();
             drawcs(20, "Main Game Controls", 0, 0, 0, 3);
-            rd.drawString("Drive your car using the Arrow Keys:", 60, 55);
-            rd.drawString("On the GROUND Spacebar is for Handbrake", 60, 76);
-            rd.drawImage(space, 106, 90, null);
-            rd.drawImage(arrows, 440, 58, null);
+            rd.drawString("Drive your car using the Arrow Keys:", 175, 55);
+            rd.drawString("On the GROUND Spacebar is for Handbrake", 175, 76);
+            rd.drawImage(space, 235, 90, null);
+            rd.drawImage(arrows, 555, 58, null);
             rd.setFont(new Font("SansSerif", 1, 11));
             FontHandler.fMetrics = rd.getFontMetrics();
-            rd.drawString("Accelerate", 450, 54);
-            rd.drawString("Brake/Reverse", 441, 132);
-            rd.drawString("Turn left", 389, 110);
-            rd.drawString("Turn right", 525, 110);
-            rd.drawString("Handbrake", 182, 109);
+            rd.drawString("Accelerate", 565, 54);
+            rd.drawString("Brake/Reverse", 555, 132);
+            rd.drawString("Turn left", 504, 110);
+            rd.drawString("Turn right", 640, 110);
+            
             drawcs(150, "--------------------------------------------------------------------------------"
                     + "--------------------------------------------------------------------", 0, 0, 0, 3);
             rd.setFont(new Font("SansSerif", 1, 13));
             FontHandler.fMetrics = rd.getFontMetrics();
-            rd.drawString("To perform stunts:", 60, 175);
-            rd.drawString("In the AIR press combo Spacebar + Arrow Keys :", 60, 195);
-            rd.drawImage(space, 120, 220, null);
-            rd.drawImage(plus, 340, 223, null);
-            rd.drawImage(arrows, 426, 188, null);
+            rd.drawString("To perform stunts:", 175, 175);
+            rd.drawString("In the AIR press combo Spacebar + Arrow Keys :", 175, 195);
+            rd.drawImage(space, 235, 220, null);
+            
+            rd.drawImage(arrows, 541, 188, null);
             rd.setFont(new Font("SansSerif", 1, 11));
             FontHandler.fMetrics = rd.getFontMetrics();
             rd.setColor(new Color(0, 0, 0));
-            rd.drawString("Forward Loop", 427, 184);
-            rd.drawString("Backward Loop", 425, 262);
-            rd.drawString("Left Roll", 378, 240);
-            rd.drawString("Right Roll", 511, 240);
-            rd.drawString("Spacebar", 201, 239);
-            rd.drawImage(stunts, 60, 260, null);
+            rd.drawString("Forward Loop", 542, 184);
+            rd.drawString("Backward Loop", 540, 262);
+            rd.drawString("Left Roll", 493, 240);
+            rd.drawString("Right Roll", 626, 240);
+            
+            rd.drawImage(stunts, 175, 290, null);
         }
         if (flipo >= 1 && flipo <= 13) {
-            rd.drawImage(next[pnext], 600, 370, null);
+            rd.drawImage(next[pnext], 715, 370, null);
         }
         if (flipo >= 3 && flipo <= 15) {
-            rd.drawImage(back[pback], 10, 370, null);
+            rd.drawImage(back[pback], 125, 370, null);
         }
         if (flipo == 15) {
-            rd.drawImage(contin[pcontin], 500, 370, null);
+            rd.drawImage(contin[pcontin], 615, 370, null);
         }
         if (control.enter || control.right) {
             if (flipo >= 1 && flipo <= 13) {
@@ -2268,7 +2264,7 @@ public class xtGraphics extends Panel implements Runnable {
         if (flipo == 102) {
             int i = 0;
             do {
-                rd.drawImage(bgmain, 0, bgmy[i], null);
+                rd.drawImage(bgmain, 0, 0, null);
                 bgmy[i] -= 10;
                 if (bgmy[i] <= -500) {
                     bgmy[i] = 500;
@@ -2287,14 +2283,12 @@ public class xtGraphics extends Panel implements Runnable {
             drawcs(230, "Ten Graves, Phyrexian, and Hyde233 for bug fixes", 90, 90, 90, 3);
 
             //////////////////////////////////////////////////////////////////////
-            rd.setColor(new Color(0, 0, 0));
-            rd.fillRect(0, 347, 900, 500);
-            rd.drawImage(kaff, 0, 347, null);
+            
         }
         if (flipo == 103) {
             int j = 0;
             do {
-                rd.drawImage(bgmain, 0, bgmy[j], null);
+                rd.drawImage(bgmain, 0,0, null);
                 bgmy[j] -= 16;
                 if (bgmy[j] <= -500) {
                     bgmy[j] = 500;
@@ -2303,9 +2297,9 @@ public class xtGraphics extends Panel implements Runnable {
             rd.drawImage(nfmcom, 240, 170, null);
         }
         if (flipo == 102) {
-            rd.drawImage(next[pnext], 600, 10, null);
+            rd.drawImage(next[pnext], 715, 10, null);
         } else {
-            rd.drawImage(next[pnext], 600, 370, null);
+            rd.drawImage(next[pnext], 715, 370, null);
         }
         if (control.enter || control.handb || control.right) {
             if (flipo >= 1 && flipo <= 100) {
@@ -2533,9 +2527,9 @@ public class xtGraphics extends Panel implements Runnable {
                         if (madness[0].missedcp > 0) {
                             if (madness[0].missedcp > 15 && madness[0].missedcp < 50) {
                                 if (flk) {
-                                    drawcs(70, "Wrong Way Pal . . .", 255, 0, 0, 0);
+                                    drawcs(75, "Wrong Way Pal . . .", 255, 0, 0, 0);
                                 } else {
-                                    drawcs(70, "Wrong Way Pal . . .", 255, 150, 0, 2);
+                                    drawcs(75, "Wrong Way Pal . . .", 255, 150, 0, 2);
                                 }
                             }
                             madness[0].missedcp++;
@@ -2552,10 +2546,10 @@ public class xtGraphics extends Panel implements Runnable {
                                 cntovn++;
                                 cntan = 40;
                                 if (flk) {
-                                    drawcs(70, "Lost Buddy?", 255, 150, 0, 0);
+                                    drawcs(75, "Lost Buddy?", 255, 150, 0, 0);
                                     flk = false;
                                 } else {
-                                    drawcs(70, "Lost Buddy?", 255, 0, 0, 2);
+                                    drawcs(75, "Lost Buddy?", 255, 0, 0, 2);
                                     flk = true;
                                 }
                             }
@@ -2568,8 +2562,8 @@ public class xtGraphics extends Panel implements Runnable {
             
                     
                     
-                
-                    /*rd.fillRect(187, 9, 54, 14);
+                    /*
+                    rd.fillRect(187, 9, 54, 14);
                     rd.drawLine(586, 10, 471, 21);
                     rd.drawLine(585, 12, 470, 19);
                     rd.fillRect(592, 29, 49, 14);
@@ -2584,7 +2578,8 @@ public class xtGraphics extends Panel implements Runnable {
                     rd.drawLine(154, 27, 39, 45);
                     rd.drawLine(153, 29, 38, 43);
                     rd.drawLine(262, 27, 147, 45);
-                    rd.drawLine(261, 29, 148, 43);*/
+                    rd.drawLine(261, 29, 148, 43);
+                    */
                     ////////////
 
                     rd.drawImage(dmg, 715, 7, null);
@@ -3063,7 +3058,7 @@ public class xtGraphics extends Panel implements Runnable {
                             rd.setColor(new Color(236, 226, 202));
                             int j = 0;
                             do {
-                                rd.drawLine(165, 155 + 4 * j, 504, 155 + 4 * j);
+                                rd.drawLine(0, 155 + 4 * j, 504, 155 + 4 * j);
                             } while (++j < 30);
                         }
                         String s = "";
@@ -3577,7 +3572,9 @@ public class xtGraphics extends Panel implements Runnable {
         youwon = loadsnap(oyouwon);
         youwastedem = loadsnap(oyouwastedem);
         gameh = loadsnap(ogameh);
-        loadingmusic = loadopsnap(oloadingmusic, i, 76);
+        
+        loadingmusic = loadopsnap(oloadingmusic, j, 0);
+        
         star[0] = loadopsnap(ostar[0], i, 0);
         star[1] = loadopsnap(ostar[1], i, 0);
         flaot = loadopsnap(oflaot, i, 1);

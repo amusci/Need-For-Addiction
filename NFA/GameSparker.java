@@ -844,7 +844,7 @@ nob++;
             /*
              * Note: that is an L
              */
-            xtgraphics.unlocked = 1; //number = stage,  l = normal
+            xtgraphics.unlocked = 17; //number = stage,  l = normal
             if (xtgraphics.unlocked != 17)
                 checkpoints.stage = xtgraphics.unlocked;
             else

@@ -231,14 +231,14 @@ public class Madness {
      * @author Omar Waly
      */
     public static float dammult[] = {
-            0.7F, .75F, 0.35F, .63F, 0.6F, .35F, 0.85F, 0.65F, 0.25F, 0.36F, 0.30f, 0.35F, 0.35F, 0.256F, 0.36F, 0.26F, 0.1F
+            0.7F, .75F, 0.35F, .63F, 0.6F, .35F, 0.85F, 0.65F, 0.25F, 0.36F, 0.30f, 0.35F, 0.30F, 0.256F, 0.36F, 0.26F, 0.1F
     };
     /**
      * The amount of Damage that a car can take before it is considered as "wasted".
      * @author Omar Waly
      */
     public static int maxmag[] = {
-             12500, 10500, 11000, 10500, 12500, 25000, 25500, 31500, 32000, 25700, 43000, 35700, 55000, 45000, 108000, 108000
+             12500, 10500, 11000, 10500, 12500, 25000, 25500, 31500, 32000, 25700, 43000, 50700, 55000, 45000, 108000, 108000
     };
     private boolean dominate[];
     private boolean caught[];
