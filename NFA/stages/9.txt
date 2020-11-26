@@ -14,6 +14,16 @@ soundtrack(spacecum.mod,299,256)
 lightson()
 
 
+
+//stagefluff
+
+
+
+
+
+
+
+
 set(47,0,0,0)p
 set(10,0,5600,0)
 set(10,0,11200,180)

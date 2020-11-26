@@ -118,7 +118,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static int airc[] = {
-            65, 35, 40, 60, 30, 30, 40, 50, 40, 45, 35, 60, 50, 60, 60, 150
+            65, 35, 40, 60, 30, 30, 40, 50, 40, 45, 35, 60, 39, 60, 60, 150
     };
     /**
      * Turning responsiveness
@@ -132,7 +132,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static float grip[] = {
-            17F, 31F, 15F, 18F, 19F, 17F, 25F, 20F, 20F, 40F, 22.5f, 45.0f, 30.0f, 27.0f, 25.0f, 127.0f
+            23F, 31F, 16F, 18F, 20F, 18F, 25F, 20F, 20F, 40F, 22.5f, 45.0f, 30.0f, 27.0f, 25.0f, 127.0f
     };
     /**
      * How much your car bounces after landing stunts
@@ -153,7 +153,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static float moment[] = {
-            1.0f, 0.25f, 1.1f, 1.0f, 1.1f, 1.38f, 1.6f, .75f, 2.0f, 1.38f, 2.5f, 1.0f, 4.0f, .5f, 5.5f, 10.0f
+            1.0f, 0.25f, 1.1f, 1.0f, 1.1f, 1.38f, 1.45f, .75f, 1.76f, 1.38f, 2.5f, 1.0f, 4.0f, .5f, 5.5f, 10.0f
     };
     /**
      * Tolerance towards other cars

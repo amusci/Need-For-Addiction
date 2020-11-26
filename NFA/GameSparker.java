@@ -60,6 +60,7 @@ public class GameSparker extends Applet implements Runnable {
     public Image offImage;
     public Thread gamer;
     public Control u[];
+    public Lights lights[];
     public int mouses;
     public int xm;
     public int ym;
@@ -274,6 +275,7 @@ public class GameSparker extends Applet implements Runnable {
     }
 
     public GameSparker() {
+        lights = new Lights[7];
         u = new Control[7];
         mouses = 0;
         xm = 0;
@@ -828,6 +830,7 @@ nob++;
         do {
             amadness[l] = new Madness(medium, record, xtgraphics, l);           
             u[l] = new Control(medium);
+            lights[l] = new Lights();
         } while (++l < 7);
         l = 0;
         float f = 35F;
@@ -1151,6 +1154,12 @@ nob++;
 
                 for (int k12 = 0; k12 < k3; k12++)
                     aconto1[ai2[ai10[k12]]].d(rd);
+                    for (int lightStep = 0; lightStep < 7; lightStep++){
+					lights[lightStep].brake = (u[lightStep].handb || u[lightStep].down) && amadness[lightStep].gtouch && !lights[lightStep].rev;
+					lights[lightStep].rev = (u[lightStep].down && amadness[lightStep].speed < 0F) || amadness[lightStep].speed < -5.0F && !u[lightStep].down;
+					lights[lightStep].changeLights(aconto1[lightStep], rd);
+				} 
+                    
                 boolean ghostmode[] = new boolean[7];
                 if(checkpoints.stage == 6){
                  ghostmode[1] = true;

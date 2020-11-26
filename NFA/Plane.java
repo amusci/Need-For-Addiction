@@ -4,6 +4,10 @@ import java.awt.*;
 public class Plane {
     private Medium m;
     private Trackers t;
+    
+    public boolean braking;
+	public boolean reversing;
+    
     public int ox[];
     public int oy[];
     public int oz[];
@@ -61,8 +65,32 @@ public class Plane {
         projf = projf / 3F;
     }
 
+    
+    /**
+	 * 
+	 * @param medium medium
+	 * @param trackers trackers
+	 * @param ai ai
+	 * @param ai1 ai1
+	 * @param ai2 ai2
+	 * @param i i
+	 * @param ai3 ai3
+	 * @param flag flag
+	 * @param j j
+	 * @param k k
+	 * @param l l
+	 * @param i1 i1
+	 * @param j1 j1
+	 * @param k1 k1
+	 * @param l1 l1
+	 * @param flag1 true if road false if not
+	 * @param i2 light id<br> <b>0</b> none<br> <b>1</b> front<br> <b>2</b> back
+	 * @param i8 flipped to true when the car is braking
+	 * @param i9 flipped to true whe the car is reversing
+	 */
+	
     public Plane(Medium medium, Trackers trackers, int ai[], int ai1[], int ai2[], int i, int ai3[], boolean flag,
-            int j, int k, int l, int i1, int j1, int k1, int l1, boolean flag1, int i2) {
+            int j, int k, int l, int i1, int j1, int k1, int l1, boolean flag1, int i2, boolean i8, boolean i9) { 
         c = new int[3];
         oc = new int[3];
         hsb = new float[3];
@@ -72,6 +100,10 @@ public class Plane {
         disline = 7;
         road = false;
         light = 0;
+        
+        braking = i8;
+		reversing = i9;
+		
         master = 0;
         wx = 0;
         wz = 0;
@@ -895,6 +927,7 @@ public class Plane {
                     f1 = 0.6F;
                 }
             }
+            
             Color color;
             if (!m.trk) {
             	color = Color.getHSBColor(hsb[0], hsb[1], hsb[2] * f1);
@@ -906,29 +939,58 @@ public class Plane {
             int l11 = color.getRed();
             int j13 = color.getGreen();
             int k14 = color.getBlue();
-            if (m.lightson && light != 0) {
+            if(m.lightson && light != 0)
+            {
                 l11 = oc[0];
-                if (l11 > 255) {
+                if(l11 > 255)
+                {
                     l11 = 255;
                 }
-                if (l11 < 0) {
+                if(l11 < 0)
+                {
                     l11 = 0;
                 }
                 j13 = oc[1];
-                if (j13 > 255) {
+                if(j13 > 255)
+                {
                     j13 = 255;
                 }
-                if (j13 < 0) {
+                if(j13 < 0)
+                {
                     j13 = 0;
                 }
                 k14 = oc[2];
-                if (k14 > 255) {
+                if(k14 > 255)
+                {
                     k14 = 255;
                 }
-                if (k14 < 0) {
+                if(k14 < 0)
+                {
                     k14 = 0;
-                }
+                }           
             }
+            /**
+			 * rear light color from p[].oc
+			 *  
+			 */
+			Color rearLights = new Color(100,100,100);	
+			Color brakeLights = new Color(255, 255, 255);
+			Color revLights = new Color(255, 255, 255);
+			if(braking && light == 2){
+				l11 = brakeLights.getRed();
+				j13 = brakeLights.getGreen();
+				k14 = brakeLights.getBlue();
+			}
+			if(reversing && light == 2){
+				l11 = revLights.getRed();
+				j13 = revLights.getGreen();
+				k14 = revLights.getBlue();
+			}
+			if(!braking && !reversing && light == 2){
+				l11 = rearLights.getRed();
+				j13 = rearLights.getGreen();
+				k14 = rearLights.getBlue();
+			}		
             if (!m.trk) {
                 int l15 = 0;
                 do {
@@ -953,29 +1015,36 @@ public class Plane {
                     l11 = 0;
                     j13 = 0;
                     k14 = 0;
-                    if (m.lightson && light != 0) {
-                        l11 = oc[0] / 2;
-                        if (l11 > 255) {
-                            l11 = 255;
+                    if(m.lightson && light != 0)
+                        {
+                            l11 = oc[0] / 2;
+                            if(l11 > 255)
+                            {
+                                l11 = 255;
+                            }
+                            if(l11 < 0)
+                            {
+                                l11 = 0;
+                            }
+                            j13 = oc[1] / 2;
+                            if(j13 > 255)
+                            {
+                                j13 = 255;
+                            }
+                            if(j13 < 0)
+                            {
+                                j13 = 0;
+                            }
+                            k14 = oc[2] / 2;
+                            if(k14 > 255)
+                            {
+                                k14 = 255;
+                            }
+                            if(k14 < 0)
+                            {
+                                k14 = 0;
+                            }
                         }
-                        if (l11 < 0) {
-                            l11 = 0;
-                        }
-                        j13 = oc[1] / 2;
-                        if (j13 > 255) {
-                            j13 = 255;
-                        }
-                        if (j13 < 0) {
-                            j13 = 0;
-                        }
-                        k14 = oc[2] / 2;
-                        if (k14 > 255) {
-                            k14 = 255;
-                        }
-                        if (k14 < 0) {
-                            k14 = 0;
-                        }
-                    }
                     rd.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
                     rd.setColor(new Color(l11, j13, k14));
                     rd.drawPolygon(ai14, ai15, n);

@@ -24,11 +24,13 @@ import java.util.*;
 public class xtGraphics extends Panel implements Runnable {
     //NFA Fonts
     static Font fontAdventure;
+    static Font fontAdventureH;
     static Font fontOpenSans;
     static {
         try {
             fontAdventure = Font.createFont(Font.TRUETYPE_FONT,new FileInputStream("data/fonts/Adventure.ttf"));
             fontOpenSans = Font.createFont(Font.TRUETYPE_FONT,new FileInputStream("data/fonts/OpenSans.ttf"));
+            fontAdventureH = Font.createFont(Font.TRUETYPE_FONT,new FileInputStream("data/fonts/AdventureH.otf"));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -793,7 +795,7 @@ public class xtGraphics extends Panel implements Runnable {
                 rd.drawString("Hello!  This will be changed eventually.", 312, 42);
                 
                 //
-                rd.drawImage(nfm, 519, 30, null);
+                //rd.drawImage(nfm, 519, 30, null);
                 rd.drawString("In this game there are two ways to complete a stage.", 312, 82);
                 rd.drawString("One is by racing and finishing in first place, the other is by", 312, 102);
                 rd.drawString("wasting and crashing all the other cars in the stage!", 312, 122);
@@ -1088,7 +1090,12 @@ public class xtGraphics extends Panel implements Runnable {
             }
             k = (int) (90 + l2 + Math.atan((double) (checkpoints.opz[l] - checkpoints.opz[0])
                     / (double) (checkpoints.opx[l] - checkpoints.opx[0])) / 0.017453292519943295D);
-            drawcs(13, "[                                ]", 76, 67, 240, 0);
+                    //names on top
+            
+            //rd.setFont(xtGraphics.fontAdventure.deriveFont(Font.BOLD,13));
+            //FontHandler.fMetrics = rd.getFontMetrics();
+            
+            drawcs(13, "[       " + names[sc[l]] + "       ]", 130, 45, 206, 3);
             drawcs(13, names[sc[l]], 0, 0, 0, 0);
             /*
              * example use of drawOver
@@ -1636,15 +1643,15 @@ public class xtGraphics extends Panel implements Runnable {
     }
 
     public void nofocus() {
-       // rd.setColor(new Color(255, 255, 255));
-       // rd.fillRect(0, 0, 900, 20);
-    //  rd.fillRect(0, 0, 20, 500);
-        //rd.fillRect(0, 500, 900, 20);
-//      rd.fillRect(900, 0, 20, 500);
-        //rd.setColor(new Color(192, 192, 192)); 
-    //  rd.drawRect(135, 137, 630, 360);
-        //rd.setColor(new Color(0, 0, 0));
-    //  rd.drawRect(137, 135, 626, 356);
+      //rd.setColor(new Color(255, 255, 255));
+      //rd.fillRect(0, 0, 900, 20);
+      //rd.fillRect(0, 0, 20, 500);
+      //rd.fillRect(0, 500, 900, 20);
+      //rd.fillRect(900, 0, 20, 500);
+      //rd.setColor(new Color(192, 192, 192)); 
+      //rd.drawRect(135, 137, 630, 360);
+      //rd.setColor(new Color(0, 0, 0));
+      //rd.drawRect(137, 135, 626, 356);
         rd.setFont(new Font("SansSerif", 1, 11));
         FontHandler.fMetrics = rd.getFontMetrics();
         drawcs(14, "Running away are we?   Click screen with mouse to continue.", 255, 255, 255, 3);
@@ -2351,10 +2358,10 @@ public class xtGraphics extends Panel implements Runnable {
                 }
                 rd.drawImage(youwastedem, 341, 70, null);
                 if (aflk) {
-                    drawcs(120, "You Won, all cars have been wasted!", 0, 0, 0, 0);
+                    drawcs(160, "You Won, all cars have been wasted!", 0, 0, 0, 0);
                     aflk = false;
                 } else {
-                    drawcs(120, "You Won, all cars have been wasted!", 0, 128, 255, 0);
+                    drawcs(160, "You Won, all cars have been wasted!", 0, 128, 255, 0);
                     aflk = true;
                 }
                 drawcs(350, "Press  [ Enter ]  to continue", 0, 0, 0, 0);
@@ -2387,10 +2394,10 @@ public class xtGraphics extends Panel implements Runnable {
                             }
                             rd.drawImage(youwon, 388, 70, null);
                             if (aflk) {
-                                drawcs(120, "You finished first, nice job!", 0, 0, 0, 0);
+                                drawcs(160, "You finished first, nice job!", 0, 0, 0, 0);
                                 aflk = false;
                             } else {
-                                drawcs(120, "You finished first, nice job!", 0, 128, 255, 0);
+                                drawcs(160, "You finished first, nice job!", 0, 128, 255, 0);
                                 aflk = true;
                             }
                             winner = true;
@@ -2403,10 +2410,10 @@ public class xtGraphics extends Panel implements Runnable {
                             }
                             rd.drawImage(youlost, 386, 70, null);
                             if (aflk) {
-                                drawcs(120, "" + names[sc[i]] + " finished first, race over!", 0, 0, 0, 0);
+                                drawcs(160, "" + names[sc[i]] + " finished first, race over!", 0, 0, 0, 0);
                                 aflk = false;
                             } else {
-                                drawcs(120, "" + names[sc[i]] + " finished first, race over!", 0, 128, 255, 0);
+                                drawcs(160, "" + names[sc[i]] + " finished first, race over!", 0, 128, 255, 0);
                                 aflk = true;
                             }
                             winner = false;
@@ -2592,6 +2599,28 @@ public class xtGraphics extends Panel implements Runnable {
                     rd.drawString("" + checkpoints.wasted + " / 6", 145, 18);
                     rd.drawImage(pos, 35, 27, null);
                     rd.drawImage(rank[checkpoints.pos[madness[0].im]], 105, 28, null);
+                    
+                    //speedometer
+                    rd.setFont(xtGraphics.fontAdventure.deriveFont(Font.BOLD,20));
+                    FontHandler.fMetrics = rd.getFontMetrics();
+            
+                    rd.setColor(new Color(255, 0, 0));
+                    int f =(int) ((madness[0].speed)* .4);
+                    if(f <= 0){
+                        f = 0;
+                    }
+                    
+                    rd.drawString("MPH:" + f + "",35, 78);
+                    
+                   // rd.setFont(xtGraphics.fontAdventureH.deriveFont(Font.BOLD,23));
+                    //FontHandler.fMetrics = rd.getFontMetrics();
+            
+                   // rd.setColor(new Color(255, 0, 0));
+                    //rd.drawString("" + f + "",35, 108);
+                    
+                    rd.setFont(new Font("SansSerif", 1, 11));
+                    FontHandler.fMetrics = rd.getFontMetrics();
+                    
 
                     m.flex++;
                 } else {
@@ -3260,11 +3289,11 @@ public class xtGraphics extends Panel implements Runnable {
                sc[1]=6;
             }
             if (i==6){
-               sc[6]=10;
-               sc[5]=10;
+               sc[6]=9;
+               sc[5]=9;
                sc[4]=10;
-               sc[3]=9;
-               sc[2]=9;
+               sc[3]=10;
+               sc[2]=10;
                sc[1]=1;
             }
             if (i==7){
@@ -3279,10 +3308,10 @@ public class xtGraphics extends Panel implements Runnable {
             if (i==9){
                sc[6]=12;
                sc[5]=11;
-               sc[4]=10;
+               sc[4]=11;
                sc[3]=9;
-               sc[2]=9;
-               sc[1]=8;
+               sc[2]=10;
+               sc[1]=10;
             }
             
             
@@ -4813,8 +4842,8 @@ public class xtGraphics extends Panel implements Runnable {
                     gatey -= 100;
                 }
                 if (flatrstart == 6) {
-                    drawcs(240, "[ Car Locked ]", 210, 210, 210, 3);
-                    drawcs(260, "This car unlocks when stage " + (sc[0] - 7) * 2 + " is completed...", 255, 0, 0, 3);
+                    drawcs(120, "[ Car Locked ]", 210, 210, 210, 3);
+                    drawcs(140, "This car unlocks when stage " + (sc[0] - 7) * 2 + " is completed...", 255, 0, 0, 3);
                 }
             } else {
                 if (flatrstart == 6) {

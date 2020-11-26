@@ -1,8 +1,9 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ loadprojf()
-comment1.params=medium\ trackers\ ai\ ai1\ ai2\ i\ ai3\ flag\ j\ k\ l\ i1\ j1\ k1\ l1\ flag1\ i2
-comment1.target=Plane(Medium,\ Trackers,\ int[],\ int[],\ int[],\ int,\ int[],\ boolean,\ int,\ int,\ int,\ int,\ int,\ int,\ int,\ boolean,\ int)
+comment1.params=medium\ trackers\ ai\ ai1\ ai2\ i\ ai3\ flag\ j\ k\ l\ i1\ j1\ k1\ l1\ flag1\ i2\ i8\ i9
+comment1.target=Plane(Medium,\ Trackers,\ int[],\ int[],\ int[],\ int,\ int[],\ boolean,\ int,\ int,\ int,\ int,\ int,\ int,\ int,\ boolean,\ int,\ boolean,\ boolean)
+comment1.text=\r\n\ \r\n\ @param\ medium\ medium\r\n\ @param\ trackers\ trackers\r\n\ @param\ ai\ ai\r\n\ @param\ ai1\ ai1\r\n\ @param\ ai2\ ai2\r\n\ @param\ i\ i\r\n\ @param\ ai3\ ai3\r\n\ @param\ flag\ flag\r\n\ @param\ j\ j\r\n\ @param\ k\ k\r\n\ @param\ l\ l\r\n\ @param\ i1\ i1\r\n\ @param\ j1\ j1\r\n\ @param\ k1\ k1\r\n\ @param\ l1\ l1\r\n\ @param\ flag1\ true\ if\ road\ false\ if\ not\r\n\ @param\ i2\ light\ id<br>\ <b>0</b>\ none<br>\ <b>1</b>\ front<br>\ <b>2</b>\ back\r\n\ @param\ i8\ flipped\ to\ true\ when\ the\ car\ is\ braking\r\n\ @param\ i9\ flipped\ to\ true\ whe\ the\ car\ is\ reversing\r\n
 comment2.params=rd\ i\ j\ k\ l\ i1\ j1\ k1\ l1\ flag\ i2\ blackout
 comment2.target=void\ d(java.awt.Graphics2D,\ int,\ int,\ int,\ int,\ int,\ int,\ int,\ int,\ boolean,\ int,\ boolean)
 comment3.params=rd\ i\ j\ k\ l\ i1\ j1\ k1

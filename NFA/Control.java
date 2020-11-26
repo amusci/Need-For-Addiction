@@ -536,7 +536,7 @@ public class Control {
                                         && (madness.pcleared == 13 || madness.pcleared == 33 || flag3) && l8 < 12000) {
                                     l8 = 12000;
                                 }
-                                if (checkpoints.stage == 5 ||checkpoints.stage == 11 ) {
+                                if (checkpoints.stage == 5 ||checkpoints.stage == 9 ) {
                                     if (bulistc) {
                                         l8 = 8000;
                                         k8 = 10;
@@ -621,11 +621,8 @@ public class Control {
                                         
                                         
                                     }
-                                    
-                                        
-                                        
-                                        
-                                    
+                                                                                                                                                                                           
+ 
                                     
                                     if (checkpoints.stage == 2) {
                                         
@@ -677,11 +674,19 @@ public class Control {
                                              f2 = 2.0F;
                                             }
                                         }
-                                    if (checkpoints.stage == 9) {
+                                    if (checkpoints.stage == 8) {
                                         f2 = 0.0F;
                                         
                                     }
-                                       
+                                    if (checkpoints.stage == 9) {
+                                        if (madness.cn == 9 || madness.cn == 11){
+                                            f2 = 0.0F;
+                                        }
+                                        
+                                         else{
+                                             f2 = 2.0F;
+                                            }
+                                        }
                                     
                                      if (checkpoints.stage == 5 && bulistc && i4 == 0) {
                                         f2 = 1.0F;
@@ -710,7 +715,7 @@ public class Control {
                                     if (checkpoints.stage == 10 && !bulistc) {
                                         f2 = 0.0F;
                                     }
-                                    if (checkpoints.stage == 11 && bulistc && i4 == 0) {
+                                    if (checkpoints.stage == 9 && bulistc && i4 == 0) {
                                         f2 = 1.0F;
                                     }
                                     if (checkpoints.stage == 12) {
@@ -796,7 +801,7 @@ public class Control {
                                                 && (madness.pcleared == 13 || madness.pcleared == 33)) {
                                             aim = 1.0F;
                                         }
-                                        if (checkpoints.stage == 5 || checkpoints.stage == 11) {
+                                        if (checkpoints.stage == 5 || checkpoints.stage == 9) {
                                             if (bulistc) {
                                                 aim = 0.7F;
                                                 if (attack > 150) {
@@ -911,6 +916,9 @@ public class Control {
                             runbul = (int) (100F * m.random());
                         }
                         if (checkpoints.stage == 5 && madness.cn == 10) {
+                            bulistc = true;
+                        }
+                        if (checkpoints.stage == 9 && madness.cn == 12) {
                             bulistc = true;
                         }
                         if (checkpoints.stage == 12 && madness.cn == 13) {

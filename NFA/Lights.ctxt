@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Lights()
+comment1.params=aconto1\ rd
+comment1.target=void\ changeLights(ContO,\ java.awt.Graphics2D)
+comment1.text=\r\n\ we\ got\ a\ Conto\ from\ gamesparker,\ let's\ act\ on\ it\r\n\ @param\ aconto1\ the\ car\r\n\ @param\ bBool\ braking?\r\n\ @param\ rBool\ reversing?\r\n\ @param\ rd\ graphics\r\n
+numComments=2
