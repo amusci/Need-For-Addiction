@@ -280,8 +280,8 @@ public class xtGraphics extends Panel implements Runnable {
     public int laps;
     public int dested[];
     public String names[] = {
-            "Illiminate", "Speedster", "Bison", "Kouki", "ADP", "Wanderer", "Ravenborn",
-            "Sergeant", "Hound", "Mashimoto", "Vanquished", "Prometheus", "Maz 543", "Elitist",
+            "Illiminate", "Speedster", "Bison", "Kraken", "Kompakt", "Wanderer", "Ravenborn",
+            "Powerhouse", "Bloodhound", "Mashimoto", "Insurgent", "Prometheus", "Meteor", "The Elite",
             "Phantom Wedge", "DR Monstaa"
     };
     public int dmcnt;
@@ -1335,7 +1335,7 @@ public class xtGraphics extends Panel implements Runnable {
         } else {
             drawcs(60, "Best Stunt!", byte0, c, c1, 0);
         }
-        drawcs(420, "Press  [ Enter ]  to continue", 0, 0, 0, 0);
+        drawcs(440, "Press  [ Enter ]  to continue", 0, 0, 0, 0);
     }
 
     public void playsounds(Madness madness, Control control, int i) {
@@ -2358,10 +2358,10 @@ public class xtGraphics extends Panel implements Runnable {
                 }
                 rd.drawImage(youwastedem, 341, 70, null);
                 if (aflk) {
-                    drawcs(160, "You Won, all cars have been wasted!", 0, 0, 0, 0);
+                    drawcs(180, "You Won, all cars have been wasted!", 0, 0, 0, 0);
                     aflk = false;
                 } else {
-                    drawcs(160, "You Won, all cars have been wasted!", 0, 128, 255, 0);
+                    drawcs(180, "You Won, all cars have been wasted!", 0, 128, 255, 0);
                     aflk = true;
                 }
                 drawcs(350, "Press  [ Enter ]  to continue", 0, 0, 0, 0);
@@ -2394,10 +2394,10 @@ public class xtGraphics extends Panel implements Runnable {
                             }
                             rd.drawImage(youwon, 388, 70, null);
                             if (aflk) {
-                                drawcs(160, "You finished first, nice job!", 0, 0, 0, 0);
+                                drawcs(180, "You finished first, nice job!", 0, 0, 0, 0);
                                 aflk = false;
                             } else {
-                                drawcs(160, "You finished first, nice job!", 0, 128, 255, 0);
+                                drawcs(180, "You finished first, nice job!", 0, 128, 255, 0);
                                 aflk = true;
                             }
                             winner = true;
@@ -2410,10 +2410,10 @@ public class xtGraphics extends Panel implements Runnable {
                             }
                             rd.drawImage(youlost, 386, 70, null);
                             if (aflk) {
-                                drawcs(160, "" + names[sc[i]] + " finished first, race over!", 0, 0, 0, 0);
+                                drawcs(180, "" + names[sc[i]] + " finished first, race over!", 0, 0, 0, 0);
                                 aflk = false;
                             } else {
-                                drawcs(160, "" + names[sc[i]] + " finished first, race over!", 0, 128, 255, 0);
+                                drawcs(180, "" + names[sc[i]] + " finished first, race over!", 0, 128, 255, 0);
                                 aflk = true;
                             }
                             winner = false;
@@ -2588,6 +2588,11 @@ public class xtGraphics extends Panel implements Runnable {
                     rd.drawLine(261, 29, 148, 43);
                     */
                     ////////////
+                    
+                
+                    
+                    ///
+                    
 
                     rd.drawImage(dmg, 715, 7, null);
                     rd.drawImage(pwr, 715, 27, null);           
@@ -2701,10 +2706,10 @@ public class xtGraphics extends Panel implements Runnable {
                         if (looped != 2) {
                             if (pwcnt < 70 || pwcnt < 160 && looped != 0) {
                                 if (pwflk) {
-                                    drawcs(160, "Power low, perform stunt!", 0, 0, 200, 0);
+                                    drawcs(180, "Power low, perform stunt!", 0, 0, 200, 0);
                                     pwflk = false;
                                 } else {
-                                    drawcs(160, "Power low, perform stunt!", 255, 100, 0, 0);
+                                    drawcs(180, "Power low, perform stunt!", 255, 100, 0, 0);
                                     pwflk = true;
                                 }
                             }
@@ -2765,10 +2770,10 @@ public class xtGraphics extends Panel implements Runnable {
                         auscnt++;
                     }
                 } else if (tflk) {
-                    drawcs(160, "Bad Landing!", 0, 0, 200, 0);
+                    drawcs(180, "Bad Landing!", 0, 0, 200, 0);
                     tflk = false;
                 } else {
-                    drawcs(160, "Bad Landing!", 255, 100, 0, 0);
+                    drawcs(180, "Bad Landing!", 255, 100, 0, 0);
                     tflk = true;
                 }
                 if (madness[0].trcnt == 10) {
@@ -3474,13 +3479,13 @@ public class xtGraphics extends Panel implements Runnable {
         FontHandler.fMetrics = rd.getFontMetrics();
         if(checkpoints.stage == 1)
         {
-            rd.drawString("A barren landscape where the Hound Preys..", 43, 338);
+            rd.drawString("A barren landscape where the Bloodhound Preys..", 43, 338);
             rd.drawString("Will you be the Master he finally Obeys?", 43, 358);
         }
         if(checkpoints.stage == 2)
         {
             rd.drawString("The sands of time will warp your Mind..", 43, 338);
-            rd.drawString("Be wary of the pack of Hounds, and keep up the Grind!", 43, 358);
+            rd.drawString("Be wary of the pack of Bloodhounds, and keep up the Grind!", 43, 358);
             
             rd.setFont(xtGraphics.fontAdventure.deriveFont(Font.BOLD,13));
             FontHandler.fMetrics = rd.getFontMetrics();
@@ -3493,7 +3498,7 @@ public class xtGraphics extends Panel implements Runnable {
         if(checkpoints.stage == 3)
         {
             rd.drawString("An abandoned raceway, lost within the Dust.", 43, 338);
-            rd.drawString("Just because you use the Hound doesn't mean you gain their Trust.", 43, 358);
+            rd.drawString("Just because you use the Bloodound doesn't mean you gain their Trust.", 43, 358);
             
             rd.setColor(new Color(255, 0, 0));
             
@@ -5357,7 +5362,7 @@ public class xtGraphics extends Panel implements Runnable {
             rd.setColor(new Color(0, 0, 0));
             rd.setFont(new Font("SansSerif", 1, 13));
             if (i == 1) {
-                rd.drawString("In this Cold World, the Hound can sniff out your fear.", 312, 67);
+                rd.drawString("In this Cold World, the Bloodhound can sniff out your fear.", 312, 67);
                 rd.drawString("Make sure your go through the checkpoints to complete a lap.", 312, 87);
             } 
             if (i == 2) {
@@ -5370,7 +5375,7 @@ public class xtGraphics extends Panel implements Runnable {
             }
             if (i == 3) {
                 rd.drawString("Keep your eyes peeled to your screen, you need to focus!", 312, 67);
-                rd.drawString("Try to keep up with the racers, or waste with Hound!", 312, 87);
+                rd.drawString("Try to keep up with the racers, or waste with Bloodhound!", 312, 87);
                 rd.drawString("Press [ A ] to make the guidance arrow point to cars !", 312, 127);
             }
             if (i == 4) {
@@ -5391,7 +5396,7 @@ public class xtGraphics extends Panel implements Runnable {
                 
             }
             if (i == 7) {
-                rd.drawString("Welcome to the Prison for Prometheus Don't let him escape!", 312, 67);
+                rd.drawString("Welcome to the Prison for Prometheus. Don't let him escape!", 312, 67);
                 rd.drawString("Avoid the Vansquishers trying to pound you to dust while racing!", 312, 107);
                 rd.drawString("Or better yet.. End their SUFFERING.", 312, 127);
             }

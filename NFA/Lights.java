@@ -33,16 +33,16 @@ public class Lights {
 			/*
 			 * we're braking
 			 */
-			System.out.println("braking");
+			//System.out.println("braking");
 			/*
 			 * check to see if we've changed the light color already
 			 */
-			if (!aconto1.brakingStatus()) {
+			//if (!aconto1.brakingStatus()) {
 				/*
 				 * if not, change it
-				 */
+				 
 				aconto1.brakingLight(rd);
-			}
+			}*/
 		} else if (rev) {
 			/*
 			 * we're reversing
