@@ -3260,9 +3260,9 @@ public class xtGraphics extends Panel implements Runnable {
                sc[2]=7;
                sc[1]=5;
             }
-               if (i==2){
+               if (i==2){ //nerfed from 3 hounds to 2
                sc[6]=8;
-               sc[5]=8;
+               sc[5]=6;
                sc[4]=8;
                sc[3]=5;
                sc[2]=7;
