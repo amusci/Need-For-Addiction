@@ -160,7 +160,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static float comprad[] = {
-            0.6F, 0.4F, 0.8F, 0.6F, 0.3F, 0.8F, 0.5F, 0.5F, 1.0F, 0.8F, 0.5F, 1.5F, 0.5F, 0.5F, 0.5F, 0.8F
+            1F, 0.8F, 1F, 1F, 1F, 1F, 1F, 1F, 1.0F, 1F,1F, 1.5F, 0.5F, 0.5F, 0.5F, 0.8F
     };
     /**
      * How much a car can push another car while wasting
@@ -195,7 +195,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static int powerloss[] = {
-            2500000, 2500000, 3500000, 2500000, 4000000, 2500000, 3200000, 3200000, 2750000, 4200000, 2750000, 4500000, 3500000, 16700000, 0x9f5e100, 0x9f5e100
+            2500000, 1900000, 3500000, 2500000, 4000000, 2500000, 3200000, 3200000, 2750000, 4200000, 2750000, 4500000, 3500000, 16700000, 0x9f5e100, 0x9f5e100
     };
     /**
      * Y value of cars when flipped over during a bad landing

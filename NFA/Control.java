@@ -138,7 +138,7 @@ public class Control {
                         f = 0.2F;
                     }
                     if (checkpoints.stage == 4) {
-                        f = 0.5F;
+                        f = 0.0F;
                     }
                     upwait = 0;
                     
@@ -167,10 +167,10 @@ public class Control {
                         skiplev = 0.75F;
                         }
                     if (checkpoints.stage == 3) {
-                        skiplev = 1.0F;
+                        skiplev = 0F;
                         }
                     if (checkpoints.stage == 4) {
-                        skiplev = .9F;
+                        skiplev = 0F;
                         }
                     if (checkpoints.stage == 5) {
                         skiplev = .9F;
@@ -302,17 +302,8 @@ public class Control {
                     if (checkpoints.stage == 4) {
                         f = 1.5F;
                     }
-                    if (madness.power > 50F) {
-                        if (checkpoints.pos[0] - checkpoints.pos[madness.im] > 0) {
-                            saftey *= f;
-                        } else {
-                            mustland = 0.0F;
-                        }
-                    } else {
-                        mustland -= 0.5F;
-                    }
-                    if (checkpoints.stage == 8 || checkpoints.stage == 10 || checkpoints.stage == 12
-                            || checkpoints.stage == 14) {
+                   
+                    if (checkpoints.stage != 18) {
                         mustland = 0.0F;
                     }
                     stuntf = 0;
@@ -398,12 +389,12 @@ public class Control {
                         trickprf = -1F;
                     }
                     if (m.random() > madness.power / 100F) {
-                        usebounce = true;
+                        usebounce = false;
                     } else {
                         usebounce = false;
                     }
                     if (checkpoints.stage == 4 || checkpoints.stage == 6) {
-                        usebounce = true;
+                        usebounce = false;
                     }
                     if (checkpoints.stage == 10 || checkpoints.stage == 14) {
                         usebounce = false;
@@ -517,9 +508,7 @@ public class Control {
                                 if (checkpoints.stage == 3 && madness.cn == 9 && l8 < 12000) {
                                     l8 = 12000;
                                 }
-                                if (checkpoints.stage == 4 && l8 < 4000) {
-                                    l8 = 4000;
-                                }
+                                
                                 
                                 if (checkpoints.stage == 9
                                         && (madness.pcleared == 13 || madness.pcleared == 33 || flag3) && l8 < 12000) {
@@ -769,13 +758,7 @@ public class Control {
                                         if (checkpoints.stage == 3 && madness.im == 6 && m.random() > m.random()) {
                                             aim = 1.5F;
                                         }
-                                        if (checkpoints.stage == 4) {
-                                            if (i4 == 0 && checkpoints.pos[0] < checkpoints.pos[madness.im]) {
-                                                aim = 1.5F;
-                                            } else {
-                                                aim = m.random();
-                                            }
-                                        }
+                                        
                                         if (checkpoints.stage == 3 ||checkpoints.stage == 5) {
                                             aim = m.random() * 1.5F;
                                         }
@@ -916,7 +899,7 @@ public class Control {
                                 oupnt = -1;
                             }
                         }
-                        if ((checkpoints.stage == 2 || checkpoints.stage == 3 || checkpoints.stage == 4
+                        if ((checkpoints.stage == 2 || checkpoints.stage == 3
                                 || checkpoints.stage == 5 ||  checkpoints.stage == 10
                                 || checkpoints.stage == 13) && madness.cn == 13
                                 && Math.abs(checkpoints.clear[0] - madness.clear) >= 2) {

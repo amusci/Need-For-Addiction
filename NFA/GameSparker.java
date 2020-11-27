@@ -32,10 +32,11 @@ public class GameSparker extends Applet implements Runnable {
             "roblend", "noblend", "rnblend", "roadend", "offroadend", "hpground", "ramp30", "cramp35", "dramp15",
             "dhilo15", "slide10", "takeoff", "sramp22", "offbump", "offramp", "sofframp", "halfpipe", "spikes", "rail",
             "thewall", "checkpoint", "fixpoint", "offcheckpoint", "sideoff", "bsideoff", "uprise", "riseroad", "sroad",
-            "soffroad" , 
+            "soffroad" ,
     };
 
-    public static final String extraModels[] = {"offhill",/*49*/"sdroad",/*50*/ "twister1d", /*51*/"twister2d",/*52*/ "dustyend",/*53*/ "dustramp1",/*54*/ "dustramp2",/*55*/ "dramp2",/*56*/ "bramp",/*57*/ "broad", /*58*/"quarterpipe"/*59*/};
+    public static final String extraModels[] = {"offhill",/*49*/"sdroad",/*50*/ "twister1d", /*51*/"twister2d",/*52*/ "dustyend",/*53*/ "dustramp1",/*54*/ "dustramp2",/*55*/ "dramp2",/*56*/ "bramp",/*57*/ "broad", /*58*/"quarterpipe",/*59*/
+    "toaramp1"/*60*/};
     
     /**
      * false to disable splash
@@ -842,12 +843,12 @@ nob++;
         /**
          * this bit in here reads cookies and set values
          */     
-        l = 1;//readcookie("unlocked");
+        l = readcookie("unlocked");
         if (l >= 1 && l <= 17) {         
             /*
              * Note: that is an L
              */
-            xtgraphics.unlocked = 17; //number = stage,  l = normal
+            xtgraphics.unlocked = l; //number = stage,  l = normal
             if (xtgraphics.unlocked != 17)
                 checkpoints.stage = xtgraphics.unlocked;
             else

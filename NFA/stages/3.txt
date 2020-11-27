@@ -10,7 +10,7 @@ texture(0,0,0,50)
 fadefrom(4000)
 density(5)
 mountains(33495)
-nlaps(6)
+nlaps(5)
 soundtrack(sandy canyon.mod,229,106)
 lightson()
 
