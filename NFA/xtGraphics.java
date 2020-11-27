@@ -1711,8 +1711,7 @@ public class xtGraphics extends Panel implements Runnable {
         app.setCursor(new Cursor(3));
         app.repaint();
         boolean flag = false;
-        if (i == unlocked && (i == 1 || i == 2 || i == 3 || i == 4 || i == 7 || i == 8 || i == 9 || i == 10 || i == 12
-                || i == 13 || i == 16)) {
+        if (i == unlocked && (i!=18)) {
             flag = true;
         }
         if (flag) {
@@ -3308,6 +3307,14 @@ public class xtGraphics extends Panel implements Runnable {
                sc[3]=8;
                sc[2]=10;
                sc[1]=10;
+            }
+            if (i==8){
+               sc[6]=11;
+               sc[5]=11;
+               sc[4]=11;
+               sc[3]=9;
+               sc[2]=9;
+               sc[1]=9;
             }
             
             if (i==9){

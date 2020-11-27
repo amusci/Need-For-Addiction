@@ -100,7 +100,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static int handb[] = {
-            8, 13, 10, 15, 12, 8, 9, 10, 5, 7, 8, 10, 8, 12, 7, 25
+            8, 13, 10, 15, 12, 8, 9, 10, 5, 7,/*10*/ 8, 11, 8, 12, 7, 25
     };
     /**
      * Aerial rotation
@@ -108,7 +108,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static float airs[] = {
-            .7F, .6F, 0.95F, .85F, 2.2F, .7F, 0.9F, 0.5F, 1.0F, 1.5F, 1.0f, 1.2f, 1.0f, 2.2f, 1.0f, 2.5f
+            .7F, .6F, 0.95F, .85F, 2.2F, .7F, 0.9F, 0.5F, 1.0F, 1.5F,/*10*/ 1.0f, 2.0f, 1.0f, 2.2f, 1.0f, 2.5f
     };
     /**
      * Aerial control
@@ -118,21 +118,21 @@ public class Madness {
      * @author Omar Waly
      */
     public static int airc[] = {
-            65, 35, 40, 60, 30, 30, 40, 50, 40, 45, 35, 60, 39, 60, 60, 150
+            65, 35, 40, 60, 30, 30, 40, 50, 40, 40,/*10*/ 35, 60, 39, 60, 60, 150
     };
     /**
      * Turning responsiveness
      * @author Omar Waly
      */
     public static int turn[] = {
-            6, 11, 5, 7, 8, 6, 5, 5, 12, 10, 10, 10, 10, 10, 15, 90
+            6, 11, 5, 7, 8, 6, 5, 5, 12, 10, 10, 13, 10, 10, 15, 90
     };
     /**
      * Grip of the car to the ground
      * @author Omar Waly
      */
     public static float grip[] = {
-            23F, 31F, 16F, 18F, 20F, 18F, 25F, 20F, 20F, 40F, 22.5f, 45.0f, 30.0f, 27.0f, 25.0f, 127.0f
+            23F, 31F, 16F, 18F, 20F, 18F, 25F, 20F, 20F, 40F,/*10*/ 22.5f, 45.0f, 30.0f, 27.0f, 25.0f, 127.0f
     };
     /**
      * How much your car bounces after landing stunts
@@ -153,7 +153,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static float moment[] = {
-            1.0f, 0.25f, 1.1f, 1.0f, 1.1f, 1.38f, 1.45f, .75f, 1.76f, 1.38f, 2.5f, 1.0f, 4.0f, .5f, 5.5f, 10.0f
+            1.0f, 0.25f, 1.1f, 1.0f, 1.1f, 1.38f, 1.45f, .75f, 1.76f, .8f, /*10*/2.5f, 1.0f, 4.0f, .5f, 5.5f, 10.0f
     };
     /**
      * Tolerance towards other cars
@@ -174,7 +174,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static int revpush[] = {
-            2, 3, 2, 2, 2, 2, 2, 1, 2, 1, 2, 1, 2, 0, 0, 1
+            2, 3, 2, 2, 2, 2, 2, 1, 2, 1, 2, 0, 2, 0, 0, 1
     };
     /**
      * How much a car can lift another car while wasting
