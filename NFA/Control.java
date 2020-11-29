@@ -144,7 +144,7 @@ public class Control {
                     
                     
                     f = 0.0F;
-                    if (checkpoints.stage == 1 || checkpoints.stage == 2|| checkpoints.stage == 3|| checkpoints.stage == 5|| checkpoints.stage == 6|| checkpoints.stage == 7) {
+                    if (checkpoints.stage != 18) {
                         f = 0.2F;
                     }
                     
@@ -175,6 +175,12 @@ public class Control {
                     if (checkpoints.stage == 5) {
                         skiplev = .9F;
                         }    
+                    if (checkpoints.stage == 6) {
+                        skiplev = 0F;
+                        }   
+                    if (checkpoints.stage == 7) {
+                        skiplev = .1F;
+                        }       
                         
                     if (checkpoints.stage == 8) {
                         if (madness.pcleared >= 10 && madness.pcleared <= 24) {
@@ -431,16 +437,14 @@ public class Control {
                             flag3 = true;
                         }
                         int j2 = 60;
-                        if (checkpoints.stage == 3 || checkpoints.stage == 11 || checkpoints.stage == 17
+                        if ( checkpoints.stage == 11 || checkpoints.stage == 17
                                 || checkpoints.stage == 10 ) {
                             j2 = 30;
                         }
                         if ((checkpoints.stage == 2 || checkpoints.stage == 13) && madness.cn == 13) {
                             j2 = 50;
                         }
-                        if (checkpoints.stage == 3 && madness.im != 6) {
-                            j2 = 40;
-                        }
+                        
                         if (checkpoints.stage == 5 && madness.im != 6) {
                             j2 = 40;
                         }
@@ -505,9 +509,7 @@ public class Control {
                                     k8 = Math.abs(k8 - 360);
                                 }
                                 int l8 = 2000 * (Math.abs(checkpoints.clear[i4] - madness.clear) + 1);
-                                if (checkpoints.stage == 3 && madness.cn == 9 && l8 < 12000) {
-                                    l8 = 12000;
-                                }
+                                
                                 
                                 
                                 if (checkpoints.stage == 9
@@ -665,7 +667,16 @@ public class Control {
                                              f2 = 2.0F;
                                             }
                                         }
+                                    if (checkpoints.stage == 11) {
+                                        f2 = 0.0F;
+                                        
+                                    }
                                     
+                                        
+                                        
+                                        
+                                        
+                                        
                                      if (checkpoints.stage == 5 && bulistc && i4 == 0) {
                                         f2 = 1.0F;
                                     }
@@ -832,7 +843,7 @@ public class Control {
                     
                     //fix or na
                     
-                    if (checkpoints.stage == 2)
+                    if (checkpoints.stage == 2 || checkpoints.stage == 3)
                     
                     flag2 = true;
                     
@@ -845,9 +856,7 @@ public class Control {
                     if (trfix != 3) {
                         trfix = 0;
                         int j1 = 50;
-                        if (checkpoints.stage == 1 || checkpoints.stage == 3 |checkpoints.stage == 16) {
-                            j1 = 40;
-                        }
+                       
                         if ((100F * madness.hitmag) / Madness.maxmag[madness.cn] > j1) {
                             trfix = 1;
                         }
@@ -1233,7 +1242,7 @@ public class Control {
                                 }
                             }
                         }
-                        if (checkpoints.stage == 3 || checkpoints.stage == 5|| checkpoints.stage == 11) {
+                        if (checkpoints.stage == 5|| checkpoints.stage == 11) {
                             if (i >= 14 && i <= 19) {
                                 i = 13;
                             }

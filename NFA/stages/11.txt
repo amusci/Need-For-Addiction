@@ -1,16 +1,18 @@
-
-snap(10,30,-38)
-
-sky(189,202,255)
-fog(178,184,214)
-ground(176,176,176)
-polys(172,172,172)
-
-fadefrom(5000)
-density(3)
+snap(-90,-90,-90)
+sky(0,0,0)
+fog(0,0,0)
+clouds(255,255,255,5,-1000)
+ground(0,0,0)
+texture(100,100,100,100)
+fadefrom(8000)
+density(5)
+mountains(68122)
+nlaps(5)
+soundtrack(lem3-sh1.mod,619,25)
+lightson()
 
 name(Rolling with the Big Boys)
-nlaps(3)
+
 
 
 set(47,0,0,0)p
@@ -18,6 +20,12 @@ set(10,0,5600,0)p
 set(10,0,11200,180)
 set(26,0,10000,0)pr
 set(26,0,11200,180)
+//
+set(59,0,11200,180)
+set(57,0,10000,0)
+set(58,0,16800,0)p
+
+
 set(10,0,16800,0)p
 set(10,0,22400,180)p
 set(10,0,28000,0)

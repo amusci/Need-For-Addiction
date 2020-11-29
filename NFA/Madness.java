@@ -181,7 +181,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static int lift[] = {
-            10, 30, 0, 20, 0, 10, 10, 5, 0, 20, 0, 0, 10, 30, 200, 0
+            30, 30, 0, 25, 0, 10, 10, 0, 0, 20,/*10*/ 0, 0, 10, 30, 200, 0
     };
     /**
      * The amount of "reverse lift" or recoil the car will get from others

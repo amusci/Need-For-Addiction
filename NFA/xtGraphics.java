@@ -281,7 +281,7 @@ public class xtGraphics extends Panel implements Runnable {
     public int dested[];
     public String names[] = {
             "Illiminate", "Speedster", "Bison", "Kraken", "Kompakt", "Wanderer", "Ravenborn",
-            "Powerhouse", "Bloodhound", "Mashimoto", "Insurgent", "Prometheus", "Meteor", "The Elite",
+            "Powerhouse", "Bloodhound", "Mashimoto", "Insurgent", "Prometheus", "Meteor", "Sentinel",
             "Phantom Wedge", "DR Monstaa"
     };
     public int dmcnt;
@@ -290,7 +290,7 @@ public class xtGraphics extends Panel implements Runnable {
     public boolean pwflk;
     public String adj[][] = {
             {
-                    "Alright", "Mediocre", "Decent"
+                    "Alright", "Mediocre", "Decent" 
             }, {
                     "Wicked", "Amazing", "Certified"
             }, {
@@ -3557,6 +3557,18 @@ public class xtGraphics extends Panel implements Runnable {
             rd.setColor(new Color(255, 0, 0));
             //rd.drawString("This is a Racing Only Stage. ", 43, 400); 
         }
+        if(checkpoints.stage == 8)
+        {
+            rd.drawString("The heat is rising, the Solstice is Here!", 43, 338);
+            rd.drawString("Feel the rush of the Solistce, the answer is Near!", 43, 358);
+            
+            
+            rd.setFont(xtGraphics.fontAdventure.deriveFont(Font.BOLD,13));
+            FontHandler.fMetrics = rd.getFontMetrics();
+            
+            rd.setColor(new Color(255, 0, 0));
+            rd.drawString("Careful! The Floor is LAVA. (not implemented yet lul) ", 43, 400); 
+        }
         
         
         
@@ -4807,7 +4819,7 @@ public class xtGraphics extends Panel implements Runnable {
                 drawcs(395, "Made by FATCAT", 239, 122, 244, 1);
              }
             if (sc[0] == 13) {
-                drawcs(395, "Made by KRC", 239, 122, 244, 1);
+                drawcs(395, "Made by Rulue", 239, 122, 244, 1);
              }
             if (sc[0] == 14) {
                 drawcs(395, "Made by FATCAT", 239, 122, 244, 1);
