@@ -843,12 +843,12 @@ nob++;
         /**
          * this bit in here reads cookies and set values
          */     
-        l = 1;//readcookie("unlocked");
+        l = readcookie("unlocked");
         if (l >= 1 && l <= 17) {         
             /*
              * Note: that is an L
              */
-            xtgraphics.unlocked = 17; //number = stage,  l = normal
+            xtgraphics.unlocked = l; //number = stage,  l = normal
             if (xtgraphics.unlocked != 17)
                 checkpoints.stage = xtgraphics.unlocked;
             else
