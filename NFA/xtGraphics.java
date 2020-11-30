@@ -2246,25 +2246,25 @@ public class xtGraphics extends Panel implements Runnable {
             rd.drawImage(mdness, 333, 7, null);
             rd.setFont(new Font("SansSerif", 1, 13)); 
             FontHandler.fMetrics = rd.getFontMetrics();
-            drawcs(65, "At Radicalplay.com", 0, 0, 0, 3);
-            drawcs(100, "Cartoon 3D Engine, Game Programming, 3D Models, Graphics and Sound Effects", 0, 0, 0, 3);
-            drawcs(120, "Everything By Omar Waly", 70, 70, 70, 3);
+            drawcs(65, "Credits not Finished.", 0, 0, 0, 3);
+            drawcs(100, "Fuck Omar Waly", 0, 0, 0, 3);
+            drawcs(120, "Fuck Omar Waly", 70, 70, 70, 3);
             rd.setFont(new Font("SansSerif", 1, 13));
             FontHandler.fMetrics = rd.getFontMetrics();
-            drawcs(180, "Thanks for Game Testing", 0, 0, 0, 3);
+            drawcs(180, "Fuck Omar Waly", 0, 0, 0, 3);
             rd.setFont(new Font("SansSerif", 1, 11));
             FontHandler.fMetrics = rd.getFontMetrics();
-            drawcs(200, "Soufy H Abutaleb, Sherif Abouzeid,", 90, 90, 90, 3);
-            drawcs(215, "Kareem Mansour, Youssef Wahby,", 90, 90, 90, 3);
-            drawcs(230, "Taymour Farid, Mahmoud Waly", 90, 90, 90, 3);
-            drawcs(245, "and Mahmoud Ezzeldin (Turbo)", 90, 90, 90, 3);
+            drawcs(200, "Fuck Omar Waly,", 90, 90, 90, 3);
+            drawcs(215, "Fuck Omar Waly,", 90, 90, 90, 3);
+            drawcs(230, "Fuck Omar Waly", 90, 90, 90, 3);
+            drawcs(245, "Fuck Omar Waly", 90, 90, 90, 3);
             rd.setFont(new Font("SansSerif", 1, 13));
             FontHandler.fMetrics = rd.getFontMetrics();
-            drawcs(340, "Music was obtained from the ModArchive.org", 0, 0, 0, 3);
+            drawcs(340, "Fuck Omar Waly", 0, 0, 0, 3);
             rd.setFont(new Font("SansSerif", 1, 11));
             FontHandler.fMetrics = rd.getFontMetrics();
-            drawcs(360, "All tracks where remixed to fit game by Omar Waly", 90, 90, 90, 3);
-            drawcs(380, "For more details about the music: http://www.radicalplay.com/madcars/music.html", 90, 90, 90,
+            drawcs(360, "Fuck Omar Waly", 90, 90, 90, 3);
+            drawcs(380, "Fuck Omar Waly", 90, 90, 90,
                     3);
         }
         if (flipo == 102) {
