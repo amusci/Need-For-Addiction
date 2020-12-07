@@ -108,7 +108,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static float airs[] = {
-            .7F, .6F, 0.95F, .85F, 2.2F, .7F, 0.9F, 0.5F, 1.0F, 1.5F,/*10*/ 1.0f, 2.0f, 1.0f, 2.2f, 1.0f, 2.5f
+            .7F, .6F, 0.95F, .85F, 2.2F, .7F, 0.9F, 0.5F, 1.0F, 1.5F,/*10*/ 1.0f, 1.0f, 1.0f, 2.2f, 1.0f, 2.5f
     };
     /**
      * Aerial control
@@ -118,21 +118,21 @@ public class Madness {
      * @author Omar Waly
      */
     public static int airc[] = {
-            65, 35, 40, 60, 30, 30, 40, 50, 40, 40,/*10*/ 35, 60, 39, 60, 60, 150
+            65, 35, 40, 60, 30, 30, 40, 50, 40, 40,/*10*/ 35, 40, 39, 60, 60, 150
     };
     /**
      * Turning responsiveness
      * @author Omar Waly
      */
     public static int turn[] = {
-            6, 11, 5, 7, 8, 6, 5, 5, 12, 10, 10, 13, 10, 10, 15, 90
+            6, 11, 5, 7, 8, 6, 5, 5, 12, 10, 10, 13, 10, 15, 15, 90
     };
     /**
      * Grip of the car to the ground
      * @author Omar Waly
      */
     public static float grip[] = {
-            23F, 31F, 16F, 18F, 20F, 18F, 25F, 20F, 20F, 40F,/*10*/ 22.5f, 45.0f, 30.0f, 27.0f, 25.0f, 127.0f
+            23F, 31F, 16F, 18F, 20F, 18F, 25F, 20F, 20F, 40F,/*10*/ 22.5f, 45.0f, 30.0f, 45.0f, 35.0f, 127.0f
     };
     /**
      * How much your car bounces after landing stunts
@@ -160,7 +160,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static float comprad[] = {
-            1F, 0.8F, 1F, 1F, 1F, 1F, 1F, 1F, 1.0F, 1F,1F, 1.5F, 0.5F, 0.5F, 0.5F, 0.8F
+            1F, 0.8F, 1F, 1F, 1F,.8F, 1F, .8F, 1.0F, 1F,1F, 1.5F, 0.5F, 0.5F, 0.5F, 0.8F
     };
     /**
      * How much a car can push another car while wasting
@@ -181,7 +181,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static int lift[] = {
-            30, 30, 0, 25, 0, 10, 10, 0, 0, 20,/*10*/ 0, 0, 10, 30, 200, 0
+            30, 30, 0, 25, 0, 10, 10, 0, 0, 20,/*10*/ 0, 0, 10, 30, 100, 0
     };
     /**
      * The amount of "reverse lift" or recoil the car will get from others
@@ -195,7 +195,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static int powerloss[] = {
-            2500000, 1900000, 3500000, 2500000, 4000000, 2500000, 3200000, 3200000, 2750000, 4200000, 2750000, 4500000, 3500000, 16700000, 0x9f5e100, 0x9f5e100
+            2500000, 1900000, 3500000, 2500000, 3200000, 2500000, 3200000, 3200000, 2750000, 3200000, 3200000, 3200000, 4200000, 16700000, 0x9f5e100, 0x9f5e100
     };
     /**
      * Y value of cars when flipped over during a bad landing
@@ -231,7 +231,7 @@ public class Madness {
      * @author Omar Waly
      */
     public static float dammult[] = {
-            0.7F, .75F, 0.35F, .63F, 0.6F, .35F, 0.85F, 0.55F, 0.25F, 0.36F, /*10*/ 0.30f, 0.35F, 0.30F, 0.256F, 0.36F, 0.26F, 0.1F
+            0.7F, .75F, 0.35F, .63F, 0.6F, .35F, 0.85F, 0.55F, 0.25F, 0.36F, /*10*/ 0.30f, 0.35F, 0.30F, 0.156F, 0.36F, 0.26F, 0.1F
     };
     /**
      * The amount of Damage that a car can take before it is considered as "wasted".
@@ -849,6 +849,12 @@ public class Madness {
         boolean flag2 = false;
         capsized = false;
         int k;
+        
+        
+        
+        
+        
+        
         for (k = Math.abs(pzy); k > 270; k -= 360)
             ;
         k = Math.abs(k);

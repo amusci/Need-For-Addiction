@@ -104,6 +104,7 @@ public class xtGraphics extends Panel implements Runnable {
      *      250, 350, 450, 550, 650, 750, 850
      * };
      */
+    
     //probability, handling, endurance
     public float proba[] = {
             0.6F, 0.7F, 0.4F, 0.3F, 0.8F, 0, 0.3F, 0.3F, 0.3F, 0.1F, 0.1F, 0.5F, 0, 0, 0, 0
@@ -1335,7 +1336,7 @@ public class xtGraphics extends Panel implements Runnable {
         } else {
             drawcs(60, "Best Stunt!", byte0, c, c1, 0);
         }
-        drawcs(440, "Press  [ Enter ]  to continue", 0, 0, 0, 0);
+        drawcs(460, "Press  [ Enter ]  to continue", 0, 0, 0, 0);
     }
 
     public void playsounds(Madness madness, Control control, int i) {
@@ -3321,10 +3322,56 @@ public class xtGraphics extends Panel implements Runnable {
                sc[6]=12;
                sc[5]=11;
                sc[4]=11;
-               sc[3]=9;
-               sc[2]=10;
+               sc[3]=11;
+               sc[2]=9;
+               sc[1]=9;
+            }
+            
+            if (i==10){
+               sc[6]=12;
+               sc[5]=11;
+               sc[4]=11;
+               sc[3]=11;
+               sc[2]=9;
+               sc[1]=9;
+            }
+            
+            if (i==11){
+               sc[6]=12;
+               sc[5]=11;
+               sc[4]=11;
+               sc[3]=11;
+               sc[2]=9;
+               sc[1]=9;
+            }
+            
+            if (i==12){
+               sc[6]=12;
+               sc[5]=11;
+               sc[4]=11;
+               sc[3]=11;
+               sc[2]=9;
+               sc[1]=9;
+            }
+            
+            if (i==13){
+               sc[6]=12;
+               sc[5]=11;
+               sc[4]=11;
+               sc[3]=11;
+               sc[2]=9;
+               sc[1]=9;
+            }
+            
+            if (i==14){
+               sc[6]=14;
+               sc[5]=14;
+               sc[4]=14;
+               sc[3]=12;
+               sc[2]=12;
                sc[1]=10;
             }
+            
             
             
             

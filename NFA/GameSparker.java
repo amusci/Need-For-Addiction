@@ -764,12 +764,33 @@ nob++;
         if(checkpoints.stage == 6) {
             xs[1] = 2210;
             zs[1] = -800;
-            System.out.println("Changed");
+            System.out.println("stage 6 change");
+            
+            
+            
+            
             
             //change whatever
            //xs[1] = 2210;
            //zs[1] = -800;
         }
+        if(checkpoints.stage == 9) {
+            xs[6] = 0;
+            zs[6] = -5800;
+            
+           
+            
+            System.out.println("stage 9 change");
+            
+            
+            
+            
+            
+            //change whatever
+           //xs[1] = 2210;
+           //zs[1] = -800;
+        }
+        
 
         j1 = 0;
         do {
@@ -843,12 +864,12 @@ nob++;
         /**
          * this bit in here reads cookies and set values
          */     
-        l = readcookie("unlocked");
+        l = 17;//readcookie("unlocked");
         if (l >= 1 && l <= 17) {         
             /*
              * Note: that is an L
              */
-            xtgraphics.unlocked = l; //number = stage,  l = normal
+            xtgraphics.unlocked = 17; //number = stage,  l = normal
             if (xtgraphics.unlocked != 17)
                 checkpoints.stage = xtgraphics.unlocked;
             else
