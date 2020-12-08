@@ -1595,11 +1595,11 @@ public class Medium
 		z = (int) trz + (int) (17000F * RadicalMath.sin(vxz));
 		if (hit > 5000) {
 			if (hit == 45000) {
-				fo = 1.0F;
+				fo = 1F;
 				zy = 67;
 				atrx = (checkpoints.x[0] - trx) / 116L;
 				atrz = (checkpoints.z[0] - trz) / 116L;
-				focus_point = 400;
+				focus_point = 40000;
 			}
 			hit -= fallen;
 			fallen += 7;

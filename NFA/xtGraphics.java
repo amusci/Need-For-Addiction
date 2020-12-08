@@ -704,7 +704,7 @@ public class xtGraphics extends Panel implements Runnable {
             fase = 1;
         }
     }
-
+/*
     public void loadingstage(int i) {
         trackbg(true);
 
@@ -723,7 +723,7 @@ public class xtGraphics extends Panel implements Runnable {
         drawcs(496, "You can also use Keyboard Arrows and Enter to navigate.", 255, 113, 250, 3);
         app.repaint();
         
-    }
+    }*/
 
 
     public void inst(Control control) {
@@ -3341,8 +3341,8 @@ public class xtGraphics extends Panel implements Runnable {
                sc[5]=11;
                sc[4]=11;
                sc[3]=11;
-               sc[2]=9;
-               sc[1]=9;
+               sc[2]=12;
+               sc[1]=12;
             }
             
             if (i==12){
@@ -3616,6 +3616,7 @@ public class xtGraphics extends Panel implements Runnable {
             rd.setColor(new Color(255, 0, 0));
             rd.drawString("Careful! The Floor is LAVA. (not implemented yet lul) ", 43, 400); 
         }
+        
         
         
         
@@ -5467,19 +5468,18 @@ public class xtGraphics extends Panel implements Runnable {
                 rd.drawString("Or better yet.. End their SUFFERING.", 312, 127);
             }
             if (i == 8) {
-                rd.drawString("Watch out, EL KING is out to get you now!", 312, 67);
-                rd.drawString("He seems to be seeking revenge?", 312, 87);
-                rd.drawString("(To fly longer distances in the air try drifting your car on the ramp", 312, 127);
-                rd.drawString("before take off).", 312, 147);
+                rd.drawString("Can't you feel the rush? The lava is rising!", 312, 67);
+                rd.drawString("Don't touch the ground, for it will surely burn through!", 312, 87);
+                rd.drawString("Keep up with the other racers, or you'll burn alive!", 312, 147);
             }
             if (i == 9) {
-                rd.drawString("It\u2019s good to be the king!", 312, 67);
+                rd.drawString("", 312, 67);
             }
             if (i == 10) {
-                rd.drawString("Remember, forward loops give your car a push forwards in the air", 312, 67);
-                rd.drawString("and help in racing.", 312, 87);
-                rd.drawString("(You may need to do more forward loops here.  Also try keeping", 312, 127);
-                rd.drawString("your power at maximum at all times.  Try not to miss a ramp).", 312, 147);
+                rd.drawString("Watch out! Look out! Meteor is coming for you all!", 312, 67);
+                rd.drawString("Even when cars become wasted... they don't stop moving!", 312, 87);
+                rd.drawString("Keep racing and don't look back, there's nothing there for you!", 312, 127);
+                
             }
             if (i == 12) {
                 rd.drawString("Watch out!  Beware!  Take care!", 312, 67);

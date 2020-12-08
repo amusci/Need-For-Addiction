@@ -1189,7 +1189,18 @@ public class Madness {
                     && Math.abs(conto.x - trackers.x[l3]) < trackers.radx[l3]
                     && Math.abs(conto.z - trackers.z[l3]) < trackers.radz[l3])
                 k3 = trackers.skd[l3];
-
+                
+                
+        /*lava
+        boolean ground = conto.y + conto.grat >= -250;
+        
+        
+        if (ground && mtouch && this.im == 0) {
+            if (hitmag < maxmag[cn]) hitmag += checkpoints.lava * dammult[cn];
+        }
+        */
+        
+        
         if (mtouch) {
             float f6 = grip[cn];
             f6 -= (Math.abs(txz - conto.xz) * speed) / 250F;

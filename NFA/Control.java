@@ -191,6 +191,9 @@ public class Control {
                     }
                     if (checkpoints.stage == 9) {
                         skiplev = 0F;
+                        } 
+                    if (checkpoints.stage == 10) {
+                        skiplev = 1F;
                         }  
                     if (checkpoints.stage == 11) {
                         skiplev = 0.0F;
@@ -262,10 +265,10 @@ public class Control {
                             turntyp = 1;
                         }
                         if (checkpoints.stage == 9) {
-                            turntyp = 0;
+                            turntyp = 2;
                         }
                         if (checkpoints.stage == 10) {
-                            turntyp = 0;
+                            turntyp = 2;
                         }
                         if (checkpoints.stage == 13) {
                             turntyp = 1;
@@ -363,7 +366,7 @@ public class Control {
                         if (madness.pcleared == 77) {
                             stuntf = 7;
                         }
-                        avoidnlev = (int) (2700F * m.random());
+                        avoidnlev = (int) 3000 ;
                     }
                     trickprf = (madness.power - 38F) / 50F - m.random() / 2.0F;
                     if (madness.power < 60F) {
@@ -587,7 +590,7 @@ public class Control {
                                         if (madness.cn == 8 || madness.cn == 5){
                                            f2 = 10.0F;
                                         attack = 5000;
-                                        aim = .5F;
+                                        aim = 1F;
                                         }
                                         else{
                                              f2 = 0F;
@@ -666,6 +669,17 @@ public class Control {
                                              f2 = 0.0F;
                                             }
                                         }
+                                        
+                                   if (checkpoints.stage == 10) {
+                                        if (madness.cn == 12){
+                                            f2 = 2.0F;
+                                            aim = 10F;
+                                        }
+                                       
+                                         else{
+                                             f2 = 0.0F;
+                                            }
+                                        }     
                                         
                                         
                                     if (checkpoints.stage == 11) {
@@ -782,8 +796,25 @@ public class Control {
                                                 aim = m.random();
                                             }
                                         }
-                                        if (checkpoints.stage == 9 && madness.im == 6 && m.random() > m.random()) {
-                                            aim = 1.5F;
+                                        if (checkpoints.stage == 9) {
+                                            if (bulistc) {
+                                                aim = 0.7F;
+                                                if (attack > 150) {
+                                                    attack = 150;
+                                                }
+                                            } else {
+                                                aim = m.random();
+                                            }
+                                        }
+                                        if (checkpoints.stage == 10) {
+                                            if (bulistc) {
+                                                aim = 0.7F;
+                                                if (attack > 150) {
+                                                    attack = 150;
+                                                }
+                                            } else {
+                                                aim = m.random();
+                                            }
                                         }
                                         if (checkpoints.stage == 12) {
                                             if (m.random() > m.random()) {
@@ -842,7 +873,7 @@ public class Control {
                     
                 
                     if (checkpoints.stage == 6  || checkpoints.stage == 9
-                            || checkpoints.stage == 17) {
+                            || checkpoints.stage == 10) {
                         flag2 = true;
                     }
                    
@@ -882,7 +913,10 @@ public class Control {
                         if (checkpoints.stage == 9 && madness.cn == 12) {
                             bulistc = true;
                         }
-                       
+                        if (checkpoints.stage == 10 && madness.cn == 12) {
+                            bulistc = true;
+                        }
+                        
                         if (checkpoints.stage == 12 && madness.cn == 13) {
                             bulistc = true;
                         }
@@ -1709,7 +1743,7 @@ public class Control {
                         oxy = madness.pxy;
                         ozy = madness.pzy;
                         flycnt = 0;
-                        uddirect = 0;
+                        uddirect = 1;
                         lrdirect = 0;
                         udswt = false;
                         lrswt = false;
@@ -1799,10 +1833,61 @@ public class Control {
                                 }
                                 lrdirect = 0;
                             }
-                            if (checkpoints.stage == 10) {
+                            
+                            //AI stunting
+                            if (checkpoints.stage == 1) {
                                 uddirect = 1;
                                 lrdirect = 0;
                             }
+                             if (checkpoints.stage == 3) {
+                                uddirect = -1;
+                                lrdirect = 0;
+                            }
+                             if (checkpoints.stage == 4) {
+                                uddirect = 1;
+                                lrdirect = 0;
+                            }
+                             if (checkpoints.stage == 5) {
+                                uddirect = 1;
+                                lrdirect = 0;
+                            }
+                             if (checkpoints.stage == 6) {
+                                uddirect = 1;
+                                lrdirect = 0;
+                            }
+                             if (checkpoints.stage == 7) {
+                                uddirect = -1;
+                                lrdirect = 0;
+                            }
+                             if (checkpoints.stage == 8) {
+                                uddirect = 1;
+                                lrdirect = 0;
+                            }
+                             if (checkpoints.stage == 9) {
+                                uddirect = 1;
+                                lrdirect = 0;
+                            }
+                             if (checkpoints.stage == 10) {
+                                uddirect = 1;
+                                lrdirect = 0;
+                            }
+                             if (checkpoints.stage == 11) {
+                                uddirect = 1;
+                                lrdirect = 0;
+                            }
+                             if (checkpoints.stage == 12) {
+                                uddirect = 1;
+                                lrdirect = 0;
+                            }
+                             if (checkpoints.stage == 13) {
+                                uddirect = 1;
+                                lrdirect = 0;
+                            }
+                             if (checkpoints.stage == 14) {
+                                uddirect = 1;
+                                lrdirect = 0;
+                            }
+                            
                             if (checkpoints.stage == 16) {
                                 uddirect = -1;
                                 lrdirect = 0;

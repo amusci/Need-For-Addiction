@@ -463,6 +463,8 @@ public class GameSparker extends Applet implements Runnable {
         medium.lightson = false;
         medium.ground = 250;
         view = 0;
+        //lava
+        float lava = 0;
 
         final int wall_id = getModel("thewall");
         int r_wall = 0;
@@ -791,6 +793,25 @@ nob++;
            //zs[1] = -800;
         }
         
+        if(checkpoints.stage == 10) {
+            xs[6] = -44768;
+            zs[6] = 29788;
+            
+            
+            
+           
+            
+           System.out.println("stage 10 change");
+            
+            
+            
+            
+            
+            //change whatever
+           //xs[1] = 2210;
+           //zs[1] = -800;
+        }
+        
 
         j1 = 0;
         do {
@@ -1027,13 +1048,14 @@ nob++;
                     mouses = 2;
             }
             if (xtgraphics.fase == 2) {
-                xtgraphics.loadingstage(checkpoints.stage);
+                //xtgraphics.loadingstage(checkpoints.stage);
                 loadstage(aconto1, aconto, medium, trackers, checkpoints, xtgraphics, amadness, record);
                 u[0].falseo();
             }
             if (xtgraphics.fase == 1) {
                 rd.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
                 xtgraphics.trackbg(false);
+                medium.d(rd);
                 medium.aroundtrack(checkpoints);
                 int i3 = 0;
                 int ai[] = new int[200];
@@ -1782,5 +1804,6 @@ nob++;
             ym = j;
         }
         return false;
-    }   
+    }
+    
 }
