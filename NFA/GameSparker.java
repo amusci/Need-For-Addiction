@@ -1144,8 +1144,43 @@ nob++;
                 } else {
                     u[0].enter = false;
                     u[0].handb = false;
-                    if (xtgraphics.loadedt[checkpoints.stage - 1])
-                        xtgraphics.stracks[checkpoints.stage - 1].play();
+                    if(xtgraphics.loadedt[checkpoints.stage - 1])
+                    {
+                        if(checkpoints.stage == 1)
+                                xtgraphics.stracks0.play();
+                        if(checkpoints.stage == 2)
+                                xtgraphics.stracks1.play();
+                        if(checkpoints.stage == 3)
+                                xtgraphics.stracks2.play();
+                        if(checkpoints.stage == 4)
+                                xtgraphics.stracks3.play();
+                        if(checkpoints.stage == 5)
+                                xtgraphics.stracks4.play();
+                        if(checkpoints.stage == 6)
+                                xtgraphics.stracks5.play();
+                        if(checkpoints.stage == 7)
+                                xtgraphics.stracks6.play();
+                        if(checkpoints.stage == 8)
+                                xtgraphics.stracks7.play();
+                        if(checkpoints.stage == 9)
+                                xtgraphics.stracks8.play();
+                        if(checkpoints.stage == 10)
+                                xtgraphics.stracks9.play();
+                        if(checkpoints.stage == 11)
+                                xtgraphics.stracks10.play();
+                        if(checkpoints.stage == 12)
+                                xtgraphics.stracks11.play();
+                        if(checkpoints.stage == 13)
+                                xtgraphics.stracks12.play();
+                        if(checkpoints.stage == 14)
+                                xtgraphics.stracks13.play();
+                        if(checkpoints.stage == 15)
+                                xtgraphics.stracks14.play();
+                        if(checkpoints.stage == 16)
+                                xtgraphics.stracks15.play();
+                        if(checkpoints.stage == 17)
+                                xtgraphics.stracks16.play();
+                    }
                     setCursor(new Cursor(0));
                     xtgraphics.fase = 6;
                 }

@@ -196,13 +196,8 @@ public class Control {
                         skiplev = 1F;
                         }  
                     if (checkpoints.stage == 11) {
-                        skiplev = 0.0F;
-                        if (madness.pcleared == 5) {
-                            skiplev = .80F;
-                        }
-                        if (madness.pcleared == 28 || madness.pcleared == 35) {
-                            skiplev = 0.5F;
-                        }
+                        skiplev = 1.0F;
+                        
                     }
                     if (checkpoints.stage == 13) {
                         skiplev = 0.5F;
@@ -265,6 +260,9 @@ public class Control {
                             turntyp = 1;
                         }
                         if (checkpoints.stage == 9) {
+                            turntyp = 2;
+                        }
+                        if (checkpoints.stage == 10) {
                             turntyp = 2;
                         }
                         if (checkpoints.stage == 10) {
@@ -873,7 +871,7 @@ public class Control {
                     
                 
                     if (checkpoints.stage == 6  || checkpoints.stage == 9
-                            || checkpoints.stage == 10) {
+                            || checkpoints.stage == 10|| checkpoints.stage == 11) {
                         flag2 = true;
                     }
                    
@@ -1872,8 +1870,15 @@ public class Control {
                                 lrdirect = 0;
                             }
                              if (checkpoints.stage == 11) {
+                                
+                                oxy = madness.pxy;
+                                ozy = madness.pzy;
+                                flycnt = 0;
                                 uddirect = 1;
                                 lrdirect = 0;
+                                udswt = false;
+                                lrswt = false;
+                                trickfase = 1;
                             }
                              if (checkpoints.stage == 12) {
                                 uddirect = 1;
@@ -2152,6 +2157,15 @@ public class Control {
             }
             statusque = 0;
         }
+        if (checkpoints.stage == 5) {
+            if (i != 8) {
+                hold = (int) (20F + 10F * m.random());
+                revstart = (int) (10F + 10F * m.random());
+            } else {
+                hold = 5;
+            }
+            statusque = 0;
+        }
         if (checkpoints.stage == 6 || checkpoints.stage == 8) {
             hold = 0;
         }
@@ -2160,17 +2174,9 @@ public class Control {
         }
         
         if (checkpoints.stage == 10) {
-            hold = 30;
+            hold = 0;
         }
-        if (checkpoints.stage == 11) {
-            if (i != 13) {
-                hold = 35;
-                revstart = 25;
-            } else {
-                hold = 5;
-            }
-            statusque = 0;
-        }
+        
         if (checkpoints.stage == 12) {
             if (i != 13) {
                 hold = (int) (20F + 10F * m.random());
