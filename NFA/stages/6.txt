@@ -10,7 +10,7 @@ texture(0,0,0,10)
 fadefrom(8000)
 density(8)
 mountains(20461)
-nlaps(6)
+nlaps(5)
 soundtrack(ghostlytwrmois.mod,201,48)
 lightson()
 

@@ -1,27 +1,33 @@
 
+name(Aidan's Sex Chamber)
 
 
+snap(1000,1000,1000)
+sky(0,0,0)
+fog(0,0,0)
+ground(0,0,0)
+lightson()
+fadefrom(268435412)
+nlaps(1000)
 
 
-name(test stage)
+chk(40,0,11000,0)p
+chk(40,0,21000,0)p
+chk(40,0,35000,90)p
+chk(40,0,21000,0)p
+chk(40,0,11000,0)p
+chk(40,0,-4000,90)p
 
-snap(0,0,0)
-sky(191,215,255)
-clouds(255,255,255,5,-1000)
-fog(195,207,230)
-ground(192,194,202)
-texture(0,0,0,50)
-fadefrom(5000)
-density(5)
-mountains(33805)
-nlaps(1)
-set(47,0,0,0)p
-set(10,0,5600,180)p
-set(10,250,5825,90)
-chk(40,0,8232,90)
-chk(40,0,8232,0)
+maxb(1,-1000,0)
+maxt(1,1000,0)
+maxr(1,1000,0)
+maxl(1,-1000,0)
+maxb(7,-10000,-15000)
+maxt(7,10000,-15000)
+maxr(7,10000,-15000)
+maxl(7,-10000,-15000)
+set(41,0,0,0)p
+set(47,0,0,0)
 
-maxl(3,-4674,-1640)
-maxb(2,-4040,-2274)
-maxr(3,4925,-1640)
-maxt(2,10360,-2274)
+stagemaker(seba.a.cares)
+

@@ -644,7 +644,7 @@ public class Control {
                                         }
                                         
                                     if (checkpoints.stage == 7) {
-                                        if (madness.cn == 9 || madness.cn == 11){
+                                        /*if (madness.cn == 9 || madness.cn == 11){
                                             f2 = 0.0F;
                                         }
                                         
@@ -652,7 +652,9 @@ public class Control {
                                              f2 = 2.0F;
                                              aim = 1.5F;
                                             }
-                                        }
+                                        }*/
+                                        f2 = 0.0F;
+                                    }
                                     if (checkpoints.stage == 8) {
                                         f2 = 0.0F;
                                         
@@ -2158,7 +2160,7 @@ public class Control {
             statusque = 0;
         }
         if (checkpoints.stage == 5) {
-            if (i != 8) {
+            if (i != 10) {
                 hold = (int) (20F + 10F * m.random());
                 revstart = (int) (10F + 10F * m.random());
             } else {

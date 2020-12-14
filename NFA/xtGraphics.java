@@ -1,4 +1,3 @@
-
 import java.applet.Applet;
 import java.applet.AudioClip;
 import java.awt.*;
@@ -15,10 +14,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.*;
-
-//NFA imports
-
-import org.newdawn.easyogg.OggClip;
 
 
 
@@ -141,6 +136,7 @@ public class xtGraphics extends Panel implements Runnable {
     public Image toar1;
     public Image addictdrm;
     public Image loadingstagebg;
+    public Image NFAlogo;
     
     
     
@@ -262,32 +258,15 @@ public class xtGraphics extends Panel implements Runnable {
     public AudioClip skid[];
     public AudioClip dustskid[];
     public boolean mutes;
-    /*
-     * NFA imports
-     * public RadicalMod stages;
-    public RadicalMod cars;
-    public RadicalMod stracks[];*/
-    public OggClip stracks0;
-    public OggClip stracks1;
-    public OggClip stracks2;
-    public OggClip stracks3;
-    public OggClip stracks4;
-    public OggClip stracks5;
-    public OggClip stracks6;
-    public OggClip stracks7;
-    public OggClip stracks8;
-    public OggClip stracks9;
-    public OggClip stracks10;
-    public OggClip stracks11;
-    public OggClip stracks12;
-    public OggClip stracks13;
-    public OggClip stracks14;
-    public OggClip stracks15;
-    public OggClip stracks16;
-    public OggClip stracks17;
-    public OggClip stages;
-    public OggClip cars;
     
+    public RadicalMod stages;
+    public RadicalMod cars;
+    public RadicalMod stracks[];
+    
+    //NFA
+    
+    RadicalMidi mtracks[];
+    boolean isMidi[];
     
     
     public boolean loadedt[];
@@ -311,7 +290,7 @@ public class xtGraphics extends Panel implements Runnable {
     public int dested[];
     public String names[] = {
             "Illiminate", "Speedster", "Bison", "Kraken", "Kompakt", "Wanderer", "Ravenborn",
-            "Powerhouse", "Bloodhound", "Mashimoto", "Insurgent", "Prometheus", "Meteor", "Sentinel",
+            "Powerhouse", "Bloodhound", "Mashimoto", "Insurgent", "Phoenix", "Meteor", "Sentinel",
             "Phantom Wedge", "DR Monstaa"
     };
     public int dmcnt;
@@ -359,7 +338,7 @@ public class xtGraphics extends Panel implements Runnable {
     public int trkl;
     public int trklim;
     public float hipno[] = {
-            1.0F, 1.0F, 3F, 1.0F, 1.2F, 1.0F, 1.7F, 1.0F, 1.0F, 8F, 1.5F, 2.0F, 1.2F, 10F, 1.8F, 1.4F, 2.0F
+            1.0F, 1.0F, 3F, 1.0F, 1.2F, 1.0F, 1.7F, 1.0F, 1.0F, 8F, 1.5F, 2.0F, 1.2F, 10F, 1.8F, 1.4F, 2.0F, 2.0F, 2.0F //remember to add to this for stages
     };
     public int pce;
     public int flkat;
@@ -736,7 +715,6 @@ public class xtGraphics extends Panel implements Runnable {
 /*
     public void loadingstage(int i) {
         trackbg(true);
-
  
         rd.setColor(new Color(177, 177, 177));
         rd.fillRoundRect(315, 150, 270, 52, 20, 40);
@@ -1506,83 +1484,23 @@ public class xtGraphics extends Panel implements Runnable {
             }
             if (Control.mutem != mutem) {
                 mutem = Control.mutem;
-                if(mutem)
-                {
-                    if(loadedt[i - 1])
-                    {
-                        //stracks[i - 1].stop();
-                        if(i == 1)
-                                    stracks0.pause();
-                        if(i == 2)
-                                    stracks1.pause();
-                        if(i == 3)
-                                    stracks2.pause();
-                        if(i == 4)
-                                    stracks3.pause();
-                        if(i == 5)
-                                    stracks4.pause();
-                        if(i == 6)
-                                    stracks5.pause();
-                        if(i == 7)
-                                    stracks6.pause();
-                        if(i == 8)
-                                    stracks7.pause();
-                        if(i == 9)
-                                    stracks8.pause();
-                        if(i == 10)
-                                    stracks9.pause();
-                        if(i == 11)
-                                    stracks10.pause();
-                        if(i == 12)
-                                    stracks11.pause();
-                        if(i == 13)
-                                    stracks12.pause();
-                        if(i == 14)
-                                    stracks13.pause();
-                        if(i == 15)
-                                    stracks14.pause();
-                        if(i == 16)
-                                    stracks15.pause();
-                        if(i == 17)
-                                    stracks16.pause();
+                if (mutem) {
+                    if (loadedt[i - 1]) {
+                        if(isMidi[i - 1]) {
+                            mtracks[i - 1].setPaused(true);
+                        } else {
+                            stracks[i - 1].stop();
+                        }
                     }
-                } else
-                if(loadedt[i - 1])
-                {
-                    if(i == 1)
-                            stracks0.resume();
-                    if(i == 2)
-                            stracks1.resume();
-                    if(i == 3)
-                            stracks2.resume();
-                    if(i == 4)
-                            stracks3.resume();
-                    if(i == 5)
-                            stracks4.resume();
-                    if(i == 6)
-                            stracks5.resume();
-                    if(i == 7)
-                            stracks6.resume();
-                    if(i == 8)
-                            stracks7.resume();
-                    if(i == 9)
-                            stracks8.resume();
-                    if(i == 10)
-                            stracks9.resume();
-                    if(i == 11)
-                            stracks10.resume();
-                    if(i == 12)
-                            stracks11.resume();
-                    if(i == 13)
-                            stracks12.resume();
-                    if(i == 14)
-                            stracks13.resume();
-                    if(i == 15)
-                            stracks14.resume();
-                    if(i == 16)
-                            stracks15.resume();
-                    if(i == 17)
-                            stracks16.resume();
+                } else if (loadedt[i - 1]) {
+                    System.out.println("We've reached an unmute check...");
+                    if(isMidi[i - 1]) {
+                        System.out.println("Unmute check > play midi...");
+                        mtracks[i - 1].resume();
+                    } else {
+                        System.out.println("Unmute check > play mod...");
+                        stracks[i - 1].resume();
+                    }
                 }
             }
         }
@@ -1812,7 +1730,7 @@ public class xtGraphics extends Panel implements Runnable {
         app.setCursor(new Cursor(3));
         app.repaint();
         boolean flag = false;
-        if (i == unlocked && (i!=18)) {
+        if (i == unlocked && (i!=20)) {
             flag = true;
         }
         if (flag) {
@@ -1820,56 +1738,121 @@ public class xtGraphics extends Panel implements Runnable {
             runner = new Thread(this);
             runner.start();
         }
-        /*if (!loadedt[i - 1]) {
-            stracks[i - 1] = new RadicalMod("music/stage" + i + ".radq", app);
-            if (stracks[i - 1].loaded == 1) {
-                loadedt[i - 1] = true;
-            }
-        }*/
-        
-        try {
-        if(i == 1)
-            stracks0 = new OggClip("music/stage1.ogg");
-        if(i == 2)
-            stracks1 = new OggClip("music/stage2.ogg");
-        if(i == 3)
-            stracks2 = new OggClip("music/stage3.ogg");
-        if(i == 4)
-            stracks3 = new OggClip("music/stage4.ogg");
-        if(i == 5)
-            stracks4 = new OggClip("music/stage5.ogg");
-        if(i == 6)
-            stracks5 = new OggClip("music/stage6.ogg");
-        if(i == 7)
-            stracks6 = new OggClip("music/stage7.ogg");
-        if(i == 8)
-            stracks7 = new OggClip("music/stage8.ogg");
-        if(i == 9)
-            stracks8 = new OggClip("music/stage9.ogg");
-        if(i == 10)
-            stracks9 = new OggClip("music/stage10.ogg");
-        if(i == 11)
-            stracks10 = new OggClip("music/stage11.ogg");
-        if(i == 12)
-            stracks11 = new OggClip("music/stage12.ogg");
-        if(i == 13)
-            stracks12 = new OggClip("music/stage13.ogg");
-        if(i == 14)
-            stracks13 = new OggClip("music/stage14.ogg");
-        if(i == 15)
-            stracks14 = new OggClip("music/stage15.ogg");
-        if(i == 16)
-            stracks15 = new OggClip("music/stage16.ogg");
-        if(i == 17)
-            stracks16 = new OggClip("music/stage17.ogg");
-        }
-        catch(Exception exception)
+        if(!loadedt[i - 1])
         {
-            System.out.println("Error Reading Music: " + exception);
+            System.out.println("Loading music...");
+            File f = new File("music/stage" + i + ".mid");
+            File f2 = new File("music/stage" + i + ".mp3");
+            File f3 = new File("music/stage" + i + ".ogg");
+            // this also serves as a check so radicalmidi doesn't throw an error
+            if (f.exists()) {
+                System.out.println("Initializing midi...");
+                isMidi[i - 1] = true;
+                mtracks[i - 1] = new RadicalMidi("music/stage" + i + ".mid");
+                System.out.println("Loading midi...");
+                mtracks[i - 1].load();
+                loadedt[i - 1] = true;
+            } else if (f2.exists()) {
+                System.out.println("Initializing mp3...");
+                isMidi[i - 1] = true;
+                mtracks[i - 1] = new RadicalMidi("music/stage" + i + ".mp3");
+                System.out.println("Loading mp3...");
+                mtracks[i - 1].load();
+                loadedt[i - 1] = true; 
+    } else if (f3.exists()) {
+        System.out.println("Initializing/loading ogg...");
+        isMidi[i - 1] = true;
+        mtracks[i - 1] = new RadicalMidi("music/stage" + i + ".ogg");
+        loadedt[i - 1] = true;
+    } else {
+        System.out.println("Initializing mod...");
+        isMidi[i - 1] = false;
+        stracks[i - 1] = new RadicalMod("music/stage" + i + ".radq", app);
+        if(stracks[i - 1].loaded == 1)
+        {
+            loadedt[i - 1] = true;
         }
-        loadedt[i - 1] = true; //i am not sure if this line is necessary
-        
-        
+    }
+            if (!isMidi[i - 1]) {
+    System.out.println("Loading mod...");
+    
+    if(i == 1)
+    {
+    stracks[0].loadMod(260, 8000, 125, sunny, macn);
+    }
+    if(i == 2)
+    {
+    stracks[1].loadMod(260, 8000, 125, sunny, macn);
+    }
+    if(i == 3)
+    {
+    stracks[2].loadMod(70, 8000, 125, sunny, macn);
+    }
+    if(i == 4)
+    {
+    stracks[3].loadMod(190, 8000, 125, sunny, macn);
+    }
+    if(i == 5)
+    {
+    stracks[4].loadMod(162, 8000, 125, sunny, macn);
+    }
+    if(i == 6)
+    {
+    stracks[5].loadMod(220, 8000, 125, sunny, macn);
+    }
+    if(i == 7)
+    {
+    stracks[6].loadMod(300, 8000, 125, sunny, macn);
+    }
+    if(i == 8)
+    {
+    stracks[7].loadMod(200, 8000, 125, sunny, macn);
+    }
+    if(i == 9)
+    {
+    stracks[8].loadMod(200, 8000, 125, sunny, macn);
+    }
+    if(i == 10)
+    {
+    stracks[9].loadMod(232, 8000, 125, sunny, macn);
+    }
+    if(i == 11)
+    {
+    stracks[10].loadMod(370, 8000, 125, sunny, macn);
+    }
+    if(i == 12)
+    {
+    stracks[11].loadMod(290, 8000, 125, sunny, macn);
+    }
+    if(i == 13)
+    {
+    stracks[12].loadMod(222, 8000, 125, sunny, macn);
+    }
+    if(i == 14)
+    {
+    stracks[13].loadMod(230, 8000, 125, sunny, macn);
+    }
+    if(i == 15)
+    {
+    stracks[14].loadMod(220, 8000, 125, sunny, macn);
+    }
+    if(i == 16)
+    {
+    stracks[15].loadMod(261, 8000, 125, sunny, macn);
+    }
+    if(i == 17)
+    {
+    stracks[16].loadMod(400, 8000, 125, sunny, macn);
+    }
+    if(i == 18)
+    {
+    stracks[17].loadMod(400, 8000, 125, sunny, macn);
+    }
+    if(i == 19)
+    {
+    stracks[18].loadMod(400, 8000, 125, sunny, macn);
+    }
+    }
         if (flag) {
             runner.stop();
             runner = null;
@@ -1879,40 +1862,13 @@ public class xtGraphics extends Panel implements Runnable {
         lastload = i - 1;
         if (j == 0) {
             if (loadedt[i - 1]) {
-                if(i == 1)
-                        stracks0.loop();
-                if(i == 2)
-                        stracks1.loop();
-                if(i == 3)
-                        stracks2.loop();
-                if(i == 4)
-                        stracks3.loop();
-                if(i == 5)
-                        stracks4.loop();
-                if(i == 6)
-                        stracks5.loop();
-                if(i == 7)
-                        stracks6.loop();
-                if(i == 8)
-                        stracks7.loop();
-                if(i == 9)
-                        stracks8.loop();
-                if(i == 10)
-                        stracks9.loop();
-                if(i == 11)
-                        stracks10.loop();
-                if(i == 12)
-                        stracks11.loop();
-                if(i == 13)
-                        stracks12.loop();
-                if(i == 14)
-                        stracks13.loop();
-                if(i == 15)
-                        stracks14.loop();
-                if(i == 16)
-                        stracks15.loop();
-                if(i == 17)
-                        stracks16.loop();
+                if (isMidi[i - 1]) {
+                    System.out.println("Playing midi...");
+                    mtracks[i - 1].play();
+                } else {
+                    System.out.println("Playing mod...");
+                    stracks[i - 1].play();
+                }
             }
             app.setCursor(new Cursor(0));
             fase = 6;
@@ -1923,6 +1879,7 @@ public class xtGraphics extends Panel implements Runnable {
         mutem = false;
         mutes = false;
     }
+}
 
     /**Loads images from images.radq
      * 
@@ -1980,6 +1937,11 @@ public class xtGraphics extends Panel implements Runnable {
                 {
                     loadingscreenbg = loadimage(abyte0, mediatracker, toolkit);
                 }
+                if(s.equals("NFAlogo.gif"))
+                {
+                    NFAlogo = loadimage(abyte0, mediatracker, toolkit);
+                }
+                
                 
 
 
@@ -2314,80 +2276,28 @@ public class xtGraphics extends Panel implements Runnable {
             
             if (opselect == 0) {
                 if (loadedt[i - 1] && !mutem) {
-                    if(i == 1)
-                            stracks0.resume();
-                    if(i == 2)
-                            stracks1.resume();
-                    if(i == 3)
-                            stracks2.resume();
-                    if(i == 4)
-                            stracks3.resume();
-                    if(i == 5)
-                            stracks4.resume();
-                    if(i == 6)
-                            stracks5.resume();
-                    if(i == 7)
-                            stracks6.resume();
-                    if(i == 8)
-                            stracks7.resume();
-                    if(i == 9)
-                            stracks8.resume();
-                    if(i == 10)
-                            stracks9.resume();
-                    if(i == 11)
-                            stracks10.resume();
-                    if(i == 12)
-                            stracks11.resume();
-                    if(i == 13)
-                            stracks12.resume();
-                    if(i == 14)
-                            stracks13.resume();
-                    if(i == 15)
-                            stracks14.resume();
-                    if(i == 16)
-                            stracks15.resume();
-                    if(i == 17)
-                            stracks16.resume();
+                    System.out.println("We've reached an unmute check...");
+                    if(isMidi[i - 1]) {
+                        System.out.println("Unmute check > play midi...");
+                        mtracks[i - 1].resume();
+                    } else {
+                        System.out.println("Unmute check > play mod...");
+                        stracks[i - 1].resume();
+                    }
                 }
                 fase = 0;
             }
             if (opselect == 1) {
                 if (record.caught >= 300) {
                     if (loadedt[i - 1] && !mutem) {
-                        if(i == 1)
-                            stracks0.resume();
-                    if(i == 2)
-                            stracks1.resume();
-                    if(i == 3)
-                            stracks2.resume();
-                    if(i == 4)
-                            stracks3.resume();
-                    if(i == 5)
-                            stracks4.resume();
-                    if(i == 6)
-                            stracks5.resume();
-                    if(i == 7)
-                            stracks6.resume();
-                    if(i == 8)
-                            stracks7.resume();
-                    if(i == 9)
-                            stracks8.resume();
-                    if(i == 10)
-                            stracks9.resume();
-                    if(i == 11)
-                            stracks10.resume();
-                    if(i == 12)
-                            stracks11.resume();
-                    if(i == 13)
-                            stracks12.resume();
-                    if(i == 14)
-                            stracks13.resume();
-                    if(i == 15)
-                            stracks14.resume();
-                    if(i == 16)
-                            stracks15.resume();
-                    if(i == 17)
-                            stracks16.resume();
+                        System.out.println("We've reached an unmute check...");
+                        if(isMidi[i - 1]) {
+                            System.out.println("Unmute check > play midi...");
+                            mtracks[i - 1].resume();
+                        } else {
+                            System.out.println("Unmute check > play mod...");
+                            stracks[i - 1].resume();
+                        }
                     }
                     fase = -1;
                 } else {
@@ -2396,80 +2306,22 @@ public class xtGraphics extends Panel implements Runnable {
             }
             if (opselect == 2) {
                 if (loadedt[i - 1]) {
-                    if(i == 1)
-                            stracks0.stop();
-                    if(i == 2)
-                            stracks1.stop();
-                    if(i == 3)
-                            stracks2.stop();
-                    if(i == 4)
-                            stracks3.stop();
-                    if(i == 5)
-                            stracks4.stop();
-                    if(i == 6)
-                            stracks5.stop();
-                    if(i == 7)
-                            stracks6.stop();
-                    if(i == 8)
-                            stracks7.stop();
-                    if(i == 9)
-                            stracks8.stop();
-                    if(i == 10)
-                            stracks9.stop();
-                    if(i == 11)
-                            stracks10.stop();
-                    if(i == 12)
-                            stracks11.stop();
-                    if(i == 13)
-                            stracks12.stop();
-                    if(i == 14)
-                            stracks13.stop();
-                    if(i == 15)
-                            stracks14.stop();
-                    if(i == 16)
-                            stracks15.stop();
-                    if(i == 17)
-                            stracks16.stop();
+                    if(isMidi[i - 1]) {
+                        mtracks[i - 1].setPaused(true);
+                    } else {
+                        stracks[i - 1].stop();
+                    }
                 }
                 oldfase = -7;
                 fase = 11;
             }
             if (opselect == 3) {
                 if (loadedt[i - 1]) {
-                    if(i == 1)
-                            stracks0.stop();
-                    if(i == 2)
-                            stracks1.stop();
-                    if(i == 3)
-                            stracks2.stop();
-                    if(i == 4)
-                            stracks3.stop();
-                    if(i == 5)
-                            stracks4.stop();
-                    if(i == 6)
-                            stracks5.stop();
-                    if(i == 7)
-                            stracks6.stop();
-                    if(i == 8)
-                            stracks7.stop();
-                    if(i == 9)
-                            stracks8.stop();
-                    if(i == 10)
-                            stracks9.stop();
-                    if(i == 11)
-                            stracks10.stop();
-                    if(i == 12)
-                            stracks11.stop();
-                    if(i == 13)
-                            stracks12.stop();
-                    if(i == 14)
-                            stracks13.stop();
-                    if(i == 15)
-                            stracks14.stop();
-                    if(i == 16)
-                            stracks15.stop();
-                    if(i == 17)
-                            stracks16.stop();
+                    if(isMidi[i - 1]) {
+                        mtracks[i - 1].setPaused(true);
+                    } else {
+                        stracks[i - 1].stop();
+                    }
                 }
                 fase = 10;
                 opselect = 0;
@@ -2599,40 +2451,11 @@ public class xtGraphics extends Panel implements Runnable {
             }
             if (control.enter) {
                 if (loadedt[checkpoints.stage - 1]) {
-                    if(checkpoints.stage == 1)
-                            stracks0.stop();
-                    if(checkpoints.stage == 2)
-                            stracks1.stop();
-                    if(checkpoints.stage == 3)
-                            stracks2.stop();
-                    if(checkpoints.stage == 4)
-                            stracks3.stop();
-                    if(checkpoints.stage == 5)
-                            stracks4.stop();
-                    if(checkpoints.stage == 6)
-                            stracks5.stop();
-                    if(checkpoints.stage == 7)
-                            stracks6.stop();
-                    if(checkpoints.stage == 8)
-                            stracks7.stop();
-                    if(checkpoints.stage == 9)
-                            stracks8.stop();
-                    if(checkpoints.stage == 10)
-                            stracks9.stop();
-                    if(checkpoints.stage == 11)
-                            stracks10.stop();
-                    if(checkpoints.stage == 12)
-                            stracks11.stop();
-                    if(checkpoints.stage == 13)
-                            stracks12.stop();
-                    if(checkpoints.stage == 14)
-                            stracks13.stop();
-                    if(checkpoints.stage == 15)
-                            stracks14.stop();
-                    if(checkpoints.stage == 16)
-                            stracks15.stop();
-                    if(checkpoints.stage == 17)
-                            stracks16.stop();
+                    if(isMidi[checkpoints.stage - 1]) {
+                        mtracks[checkpoints.stage - 1].setPaused(true);
+                    } else {
+                        stracks[checkpoints.stage - 1].stop();
+                    }
                 }
                 fase = -6;
                 control.enter = false;
@@ -2720,12 +2543,12 @@ public class xtGraphics extends Panel implements Runnable {
                     arrace = control.arrace;
                     if (arrace) {
                         wasay = true;
-                        say = " Arrow now pointing at  Cars  <";
+                        say = " Arrow now pointing at Cars  <";
                         tcnt = -5;
                     }
                     if (!arrace) {
                         wasay = false;
-                        say = " Arrow now pointing at  Track  <";
+                        say = " Arrow now pointing at the Stage  <";
                         tcnt = -5;
                         cntan = 20;
                     }
@@ -3061,10 +2884,10 @@ public class xtGraphics extends Panel implements Runnable {
                         auscnt++;
                     }
                 } else if (tflk) {
-                    drawcs(180, "Bad Landing!", 0, 0, 200, 0);
+                    drawcs(180, "How are you a grown man and still BL?", 0, 0, 200, 0);
                     tflk = false;
                 } else {
-                    drawcs(180, "Bad Landing!", 255, 100, 0, 0);
+                    drawcs(180, "How are you a grown man and still BL?!", 255, 100, 0, 0);
                     tflk = true;
                 }
                 if (madness[0].trcnt == 10) {
@@ -3282,7 +3105,7 @@ public class xtGraphics extends Panel implements Runnable {
         rd.drawImage(fleximg, 0, 0, null);
         if (winner) {
             if (checkpoints.stage == unlocked) {
-                if (checkpoints.stage != 17) {
+                if (checkpoints.stage != 19) {
                     rd.drawImage(congrd, 200, 30, null);
                     drawcs(80, "Stage " + checkpoints.stage + " Completed!", 170, 170, 170, 3);
                 } else {
@@ -3291,6 +3114,7 @@ public class xtGraphics extends Panel implements Runnable {
                 byte byte0 = 0;
                 int i = 0;
                 pin = 60;
+                //unlock car at stage
                 if (checkpoints.stage == 2) {
                     byte0 = 8;
                     i = 265;
@@ -3339,7 +3163,14 @@ public class xtGraphics extends Panel implements Runnable {
                     pin = 0;
                     sc[0] = 15;
                 }
-                if (checkpoints.stage != 17) {
+                if (checkpoints.stage == 18) {
+                    byte0 = 16;
+                    i = 290;
+                    pin = 0;
+                    //sc[0] = 16;
+                }
+                
+                if (checkpoints.stage != 19) {
                     rd.setFont(new Font("SansSerif", 1, 13));
                     FontHandler.fMetrics = rd.getFontMetrics();
                     if (aflk) {
@@ -3476,42 +3307,13 @@ public class xtGraphics extends Panel implements Runnable {
         if (control.enter || control.handb) {
             fase = 10;
             if (loadedt[checkpoints.stage - 1]) {
-                if(checkpoints.stage == 1)
-                            stracks0.stop();
-                    if(checkpoints.stage == 2)
-                            stracks1.stop();
-                    if(checkpoints.stage == 3)
-                            stracks2.stop();
-                    if(checkpoints.stage == 4)
-                            stracks3.stop();
-                    if(checkpoints.stage == 5)
-                            stracks4.stop();
-                    if(checkpoints.stage == 6)
-                            stracks5.stop();
-                    if(checkpoints.stage == 7)
-                            stracks6.stop();
-                    if(checkpoints.stage == 8)
-                            stracks7.stop();
-                    if(checkpoints.stage == 9)
-                            stracks8.stop();
-                    if(checkpoints.stage == 10)
-                            stracks9.stop();
-                    if(checkpoints.stage == 11)
-                            stracks10.stop();
-                    if(checkpoints.stage == 12)
-                            stracks11.stop();
-                    if(checkpoints.stage == 13)
-                            stracks12.stop();
-                    if(checkpoints.stage == 14)
-                            stracks13.stop();
-                    if(checkpoints.stage == 15)
-                            stracks14.stop();
-                    if(checkpoints.stage == 16)
-                            stracks15.stop();
-                    if(checkpoints.stage == 17)
-                            stracks16.stop();
+                if(isMidi[checkpoints.stage - 1]) {
+                    mtracks[checkpoints.stage - 1].setPaused(true);
+                } else {
+                    stracks[checkpoints.stage - 1].stop();
+                }
             }
-            if (checkpoints.stage == unlocked && winner && unlocked != 17) {
+            if (checkpoints.stage == unlocked && winner && unlocked != 19) {
                 checkpoints.stage++;
                 unlocked++;
             }
@@ -3536,7 +3338,7 @@ public class xtGraphics extends Panel implements Runnable {
            
 
             // get boss car if player is not in the mad party, since that one has no boss car (you play as dr monstaa)
-            if (sc[0] != 7 + (i + 1) / 2 && i != 17) {
+            if (sc[0] != 7 + (i + 1) / 2 && i != 19) {
                 sc[6] = 7 + (i + 1) / 2;
                 if (sc[6] >= 15) {
                     sc[6] = 15 - 1; // you could put -= 5 or something here
@@ -3661,12 +3463,12 @@ public class xtGraphics extends Panel implements Runnable {
             }
             
             if (i==11){
-               sc[6]=13;
+               sc[6]=12;
                sc[5]=11;
                sc[4]=11;
                sc[3]=11;
-               sc[2]=11;
-               sc[1]=9;
+               sc[2]=12;
+               sc[1]=12;
             }
             
             if (i==12){
@@ -3828,6 +3630,13 @@ public class xtGraphics extends Panel implements Runnable {
 
     public void stageselect(CheckPoints checkpoints, Control control) {
         
+        for (int i = 0; i < 19; i++) {
+            mtracks[i] = null;
+            stracks[i] = null;
+            isMidi[i] = false;
+            loadedt[i] = false;
+    }
+        
         rd.drawImage(br, 0, 0, null);
         /*
         if (checkpoints.stage != 1) {
@@ -3838,7 +3647,7 @@ public class xtGraphics extends Panel implements Runnable {
         }*/
         rd.setFont(new Font("SansSerif", 1, 15));
         FontHandler.fMetrics = rd.getFontMetrics();
-        if (checkpoints.stage != 17) {
+        if (checkpoints.stage != 19) {
             drawcs(110, "    Stage " + checkpoints.stage + "  >", 223,97,237, 3);
         } else {
             drawcs(110, "    Final Party Stage  >", (int)(Math.random() * 255D), (int)(Math.random() * 255D), (int)(Math.random() * 255D), 3);
@@ -3958,9 +3767,9 @@ public class xtGraphics extends Panel implements Runnable {
             control.handb = false;
             control.enter = false;
             cars.stop();
-            //cars.unloadMod();
+            cars.unloadMod();
         }
-        if (control.right && checkpoints.stage < 17) {
+        if (control.right && checkpoints.stage < 19) {
             if (checkpoints.stage != unlocked) {
                 checkpoints.stage++;
                 fase = 2;
@@ -4304,8 +4113,13 @@ public class xtGraphics extends Panel implements Runnable {
         skid = new AudioClip[3];
         dustskid = new AudioClip[3];
         mutes = false;
-        //stracks = new RadicalMod[17];
-        loadedt = new boolean[17];
+        stracks = new RadicalMod[19];
+        
+        //add
+        mtracks = new RadicalMidi[19];
+        isMidi = new boolean[19];
+        
+        loadedt = new boolean[19];
         lastload = -1;
         mutem = false;
         sunny = false;
@@ -4397,14 +4211,19 @@ public class xtGraphics extends Panel implements Runnable {
         int i = 0;
         do {
             loadedt[i] = false;
-        } while (++i < 17);
+            isMidi[i] = false;
+        } while (++i < 19);
     }
     
     public void maini(Control control) {
-        cars.loop();
-        //cars.loadMod(200, 7900, 125, sunny, macn);
+        cars.play();
+        cars.loadMod(200, 7900, 125, sunny, macn);
         if (lastload >= 0 && loadedt[lastload]) {
-           //stracks[lastload].unloadMod();
+            if (isMidi[lastload]) {
+                mtracks[lastload].unloadMidi();
+            } else {
+                stracks[lastload].unloadMod();
+            }
         }
         if (flipo == 0) {
             bgmy[0] = 0;
@@ -4758,15 +4577,7 @@ public class xtGraphics extends Panel implements Runnable {
         loadimages();
         //loadnetworkimages();
         
-        try {
-            cars = new OggClip("music/cars.ogg");
-        }
-        catch(Exception exception)
-        {
-            System.out.println("Error Reading Car Select Music: " + exception);
-        }
-        
-        
+        cars = new RadicalMod("music/cars.radq", app);      
         dnload += 27;
         
         int j = 0;
@@ -4781,16 +4592,7 @@ public class xtGraphics extends Panel implements Runnable {
             //sounds
 
         } while (++j < 5);
-        
-        
-        try {
-            stages = new OggClip("music/stages.ogg");
-        }
-        catch(Exception exception)
-        {
-            System.out.println("Error Reading Track Select Music: " + exception);
-        }
-
+        stages = new RadicalMod("music/stages.radq", app);
         dnload += 91;
         j = 0;
         
@@ -4960,68 +4762,41 @@ public class xtGraphics extends Panel implements Runnable {
     public void rad(int i, int x) {
         if (i == 0) {
             hellosound.play();
-            radpx = 147;
+           
             pin = 0;
             
         }
         trackbg(false);
         rd.setColor(new Color(0, 0, 0));
-        rd.fillRect(0, 110, 900, 59);
-        if (pin != 0) {
-            rd.drawImage(loadingscreenbg, 0, 347, null);
-        } else {
-            rd.drawImage(radicalplay, 262, 110, null);
-        }
-        if (radpx != 147) {
-            radpx += 40;
-            if (radpx > 900) {
-                radpx = -453;
-            }
-        } else if (pin != 0) {
-            pin--;
-        }
-        if (i == 40) {
-            radpx = 148;
-            pin = 7;
-        }
-        if (radpx == 147) {
-            rd.setFont(new Font("SansSerif", 1, 11));
-            FontHandler.fMetrics = rd.getFontMetrics();
-            
-            //loading
-            
-            drawcs(160 + (int) (5F * m.random()), "Radicalplay.com", 112, 120, 143, 3);
-        }
-        rd.setFont(new Font("SansSerif", 1, 11));
+
+       
+        
+        rd.setFont(new Font("SansSerif", 1, 31));
         FontHandler.fMetrics = rd.getFontMetrics();
+        
+       // rd.drawImage(loadingscreenbg, 0, 0, null);
+        
+        
+        rd.drawImage(NFAlogo, 230, 205, null);
+        rd.setFont(xtGraphics.fontAdventure.deriveFont(Font.PLAIN,13));
+        FontHandler.fMetrics = rd.getFontMetrics();
+        
         if (aflk) {
-            drawcs(190, "Fuck Omar Waly | Addict", 112, 120, 143, 3);
+            drawcs(290, "i had my dick in my hand while making this lmao", 112, 120, 143, 3);
             aflk = false;
         } else {
-            drawcs(192, "Fuck Omar Waly | Addict", 150, 150, 150, 3);
+            drawcs(292, "i had my dick in my hand while making this lmao", 150, 150, 150, 3);
             aflk = true;
         }
-        rd.drawImage(loadingscreenbg, 0, 0, null);
-        rd.drawImage(toar1, radpx + (int) (-8D * -Math.random() + 4D), 55, null);
-                    if (radpx != -147) {
-                        radpx += -40;
-                        if (radpx > -900) {
-                            radpx = 453;
-                        }
-                    }
+       
+                   
           
-                    
-        rd.drawImage(addictdrm, -305 + radpx + (int) (8D * Math.random() - 4D), 305, null);
-        if (radpx != 147) {
-            radpx += 40;
-            if (radpx > 900) {
-                radpx = -453;
-            }
+       
        
                 
 
        
-    }
+                
 }
 
     public void skid(int i, float f) {
@@ -5073,10 +4848,14 @@ public class xtGraphics extends Panel implements Runnable {
         int i = 0;
         do {
             if (loadedt[i]) {
-                //stracks[i].unloadAll();
-               //stracks[i] = null;
+                if (isMidi[i]) {
+                    mtracks[i].unloadMidi();
+                } else {
+                    stracks[i].unloadAll();
+                    stracks[i] = null;
+                }
             }
-        } while (++i < 17);
+        } while (++i < 19);
         i = 0;
         do {
             engs[0][i].stop();
@@ -5087,21 +4866,21 @@ public class xtGraphics extends Panel implements Runnable {
             air[i].stop();
         } while (++i < 6);
         wastd.stop();
-        //cars.unloadAll();
-        //stages.unloadAll();
+        cars.unloadAll();
+        stages.unloadAll();
     }
 
     public void inishcarselect() {
         carsbginflex();
         flatrstart = 0;
         m.lightson = true;
-        //cars.loadMod(200, 7900, 125, sunny, macn);
+        cars.loadMod(200, 7900, 125, sunny, macn);
         pnext = 0;
         pback = 0;
     }
 
     public void carselect(Control control, ContO aconto[], Madness madness) {
-        cars.loop();
+        cars.play();
         if (flatrstart == 6) {
             rd.drawImage(carsbg, 0, 0, null);
         
@@ -5672,7 +5451,7 @@ public class xtGraphics extends Panel implements Runnable {
     @Override
     public void run() {
         while (runtyp != 0) {
-            if (runtyp >= 1 && runtyp <= 17) {
+            if (runtyp >= 1 && runtyp <= 20) {
                 hipnoload(runtyp, false);
             }
             if (runtyp == 176) {
@@ -5693,7 +5472,7 @@ public class xtGraphics extends Panel implements Runnable {
         if (checkpoints.stage != 1) {
             rd.drawImage(back[pback], 50, 110, null);
         }
-        if (checkpoints.stage != 17) {
+        if (checkpoints.stage != 19) {
             rd.drawImage(next[pnext], 560, 110, null);
         }
         rd.setFont(new Font("SansSerif", 1, 13));
@@ -5711,7 +5490,7 @@ public class xtGraphics extends Panel implements Runnable {
             control.handb = false;
             control.enter = false;
         }
-        if(control.right && checkpoints.stage < 17) {
+        if(control.right && checkpoints.stage < 19) {
             if (checkpoints.stage != unlocked) {
                 checkpoints.stage++;
                 fase = 2;
@@ -5744,7 +5523,7 @@ public class xtGraphics extends Panel implements Runnable {
         drawcs(25, asay, 255, 255, 255, 3);
         byte byte0 = -90;
         if(i == 1 || i == 2 || i == 3 || i == 4 || i == 5 || i == 6 || i == 7 || i == 8 || i == 9 || i == 10 || i == 11 || i == 12
-                || i == 13 || i == 14 || i == 15 || i == 16 || i == 17) {
+                || i == 13 || i == 14 || i == 15 || i == 16 || i == 17 || i == 18 || i == 19) {
             byte0 = 0;
         }
         if (byte0 == 0) {

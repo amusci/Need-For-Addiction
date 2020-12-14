@@ -1,4 +1,3 @@
-
 import java.applet.Applet;
 import java.awt.*;
 import java.io.*;
@@ -885,16 +884,16 @@ nob++;
         /**
          * this bit in here reads cookies and set values
          */     
-        l = 17;//readcookie("unlocked");
-        if (l >= 1 && l <= 17) {         
+        l = 19;//readcookie("unlocked");
+        if (l >= 1 && l <= 19) {         
             /*
              * Note: that is an L
              */
-            xtgraphics.unlocked = 17; //number = stage,  l = normal
-            if (xtgraphics.unlocked != 17)
+            xtgraphics.unlocked = 19; //number = stage,  l = normal
+            if (xtgraphics.unlocked != 19)
                 checkpoints.stage = xtgraphics.unlocked;
             else
-                checkpoints.stage = (int) (Math.random() * 17D) + 1;
+                checkpoints.stage = (int) (Math.random() * 19D) + 1;
             xtgraphics.opselect = 0;
         }
         l = readcookie("usercar");
@@ -994,14 +993,14 @@ nob++;
             if (xtgraphics.fase == -5) {
                 xtgraphics.finish(checkpoints, aconto, u[0]);
                 if (flag) {
-                    if (checkpoints.stage == xtgraphics.unlocked && xtgraphics.winner && xtgraphics.unlocked != 17)
+                    if (checkpoints.stage == xtgraphics.unlocked && xtgraphics.winner && xtgraphics.unlocked != 19)
                         savecookie("unlocked", "" + xtgraphics.unlocked);
                     savecookie("gameprfact", "" + (int) f);
                     savecookie("usercar", "" + xtgraphics.sc[0]);
                     flag = true;
                 }
                 xtgraphics.ctachm(xm, ym, mouses, u[0]);
-                if (checkpoints.stage == 17 && xtgraphics.winner)
+                if (checkpoints.stage == 19 && xtgraphics.winner)
                     catchlink(1);
                 if (mouses == 2)
                     mouses = 0;
@@ -1144,42 +1143,12 @@ nob++;
                 } else {
                     u[0].enter = false;
                     u[0].handb = false;
-                    if(xtgraphics.loadedt[checkpoints.stage - 1])
-                    {
-                        if(checkpoints.stage == 1)
-                                xtgraphics.stracks0.play();
-                        if(checkpoints.stage == 2)
-                                xtgraphics.stracks1.play();
-                        if(checkpoints.stage == 3)
-                                xtgraphics.stracks2.play();
-                        if(checkpoints.stage == 4)
-                                xtgraphics.stracks3.play();
-                        if(checkpoints.stage == 5)
-                                xtgraphics.stracks4.play();
-                        if(checkpoints.stage == 6)
-                                xtgraphics.stracks5.play();
-                        if(checkpoints.stage == 7)
-                                xtgraphics.stracks6.play();
-                        if(checkpoints.stage == 8)
-                                xtgraphics.stracks7.play();
-                        if(checkpoints.stage == 9)
-                                xtgraphics.stracks8.play();
-                        if(checkpoints.stage == 10)
-                                xtgraphics.stracks9.play();
-                        if(checkpoints.stage == 11)
-                                xtgraphics.stracks10.play();
-                        if(checkpoints.stage == 12)
-                                xtgraphics.stracks11.play();
-                        if(checkpoints.stage == 13)
-                                xtgraphics.stracks12.play();
-                        if(checkpoints.stage == 14)
-                                xtgraphics.stracks13.play();
-                        if(checkpoints.stage == 15)
-                                xtgraphics.stracks14.play();
-                        if(checkpoints.stage == 16)
-                                xtgraphics.stracks15.play();
-                        if(checkpoints.stage == 17)
-                                xtgraphics.stracks16.play();
+                    if(xtgraphics.loadedt[checkpoints.stage - 1]) {
+                        if (xtgraphics.isMidi[checkpoints.stage - 1]) {
+                            xtgraphics.mtracks[checkpoints.stage - 1].play();
+                        } else {
+                            xtgraphics.stracks[checkpoints.stage - 1].play();
+                        }
                     }
                     setCursor(new Cursor(0));
                     xtgraphics.fase = 6;
@@ -1234,13 +1203,13 @@ nob++;
                 for (int k12 = 0; k12 < k3; k12++)
                     aconto1[ai2[ai10[k12]]].d(rd);
                     for (int lightStep = 0; lightStep < 7; lightStep++){
-					lights[lightStep].brake = (u[lightStep].handb || u[lightStep].down) && amadness[lightStep].gtouch && !lights[lightStep].rev;
-					lights[lightStep].rev = (u[lightStep].down && amadness[lightStep].speed < 0F) || amadness[lightStep].speed < -5.0F && !u[lightStep].down;
-					lights[lightStep].changeLights(aconto1[lightStep], rd);
-				} 
+                    lights[lightStep].brake = (u[lightStep].handb || u[lightStep].down) && amadness[lightStep].gtouch && !lights[lightStep].rev;
+                    lights[lightStep].rev = (u[lightStep].down && amadness[lightStep].speed < 0F) || amadness[lightStep].speed < -5.0F && !u[lightStep].down;
+                    lights[lightStep].changeLights(aconto1[lightStep], rd);
+                } 
                     
                 boolean ghostmode[] = new boolean[7];
-                if(checkpoints.stage == 6){
+                if (checkpoints.stage == 6){
                  ghostmode[1] = true;
                 }
                 //System.out.println("" + ghostmode[1] + "");
@@ -1617,7 +1586,7 @@ nob++;
                 if (k1 >= 0)
                     xtgraphics.fleximage(offImage, k1, checkpoints.stage);
                 k1++;
-                if (checkpoints.stage == 17 && k1 == 10)
+                if (checkpoints.stage == 19 && k1 == 10)
                     xtgraphics.fase = -5;
                 if (k1 == 12)
                     xtgraphics.fase = -5;

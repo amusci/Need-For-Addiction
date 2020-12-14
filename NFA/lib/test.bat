@@ -1,0 +1,1 @@
+java -cp easyogg.jar;jogg-0.0.7.jar;jorbis-0.0.15.jar;startup2.jar org.newdawn.easyogg.TestOgg
